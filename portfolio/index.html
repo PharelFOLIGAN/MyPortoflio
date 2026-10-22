@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>if("IntersectionObserver" in window)document.documentElement.classList.add("js");</script>
+<title>Folly Pharel FOLIGAN - Étudiant IA & Big Data | Développeur</title>
+<meta name="description" content="Portfolio de Folly Pharel FOLIGAN, étudiant en IA & Big Data à l'ESGIS Lomé (admis en 2e année), développeur Python et web.">
+
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+<!-- Open Graph & Meta Réseaux Sociaux -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://pharel-portfolio.netlify.app/">
+<meta property="og:title" content="Folly Pharel FOLIGAN - Étudiant IA & Big Data | Développeur">
+<meta property="og:description" content="Portfolio de Folly Pharel FOLIGAN : applications SaaS avec IA, outils Python, développement web et data.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Folly Pharel FOLIGAN - Portfolio IA & Développeur">
+<meta name="twitter:description" content="Découvrez mes réalisations et mon parcours en Intelligence Artificielle et Big Data.">
+
+<style>
+  :root{
+    --c1:#e0e4ec;--c2:#b0b8c6;--c3:#798397;--c4:#445063;--c5:#181d25;
+    --bg:#10141b;--bg2:#181d25;
+    --glass:rgba(68,80,99,.18);--glass-strong:rgba(68,80,99,.32);--glass-border:rgba(224,228,236,.10);--glass-border-hover:rgba(224,228,236,.28);
+    --text:#e0e4ec;--muted:#b0b8c6;--dim:#798397;--accent:#b0b8c6;--accent2:#e0e4ec;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:"Segoe UI",system-ui,-apple-system,Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;position:relative}
+  /* Acrylic backdrop: soft blobs + subtle noise */
+  body::before{content:"";position:fixed;inset:0;z-index:-2;background:
+    radial-gradient(700px 500px at 85% 10%,rgba(121,131,151,.35),transparent 60%),
+    radial-gradient(600px 600px at 10% 90%,rgba(68,80,99,.55),transparent 60%),
+    radial-gradient(500px 400px at 50% 50%,rgba(176,184,198,.10),transparent 60%),
+    linear-gradient(180deg,#0e1218,#181d25)}
+  body::after{content:"";position:fixed;inset:0;z-index:-1;opacity:.06;pointer-events:none;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
+  a{color:inherit;text-decoration:none}
+  .container{max-width:1100px;margin:0 auto;padding:0 24px}
+  section{padding:96px 0}
+  h2{font-size:2rem;margin-bottom:12px;letter-spacing:-.02em;color:var(--c1)}
+  .sub{color:var(--dim);margin-bottom:48px;max-width:600px}
+  .tag{display:inline-block;font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--c2);font-weight:600;margin-bottom:12px}
+
+  /* Acrylic surface */
+  .acrylic{background:var(--glass);backdrop-filter:blur(24px) saturate(140%);-webkit-backdrop-filter:blur(24px) saturate(140%);border:1px solid var(--glass-border);box-shadow:0 8px 32px rgba(0,0,0,.35),inset 0 1px 0 rgba(224,228,236,.08)}
+
+  /* NAV */
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(24,29,37,.55);backdrop-filter:blur(20px) saturate(140%);-webkit-backdrop-filter:blur(20px) saturate(140%);border-bottom:1px solid var(--glass-border)}
+  nav .container{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .logo{font-weight:700;font-size:1.1rem;color:var(--c1);display:flex;align-items:center;gap:10px}
+  .logo-badge{width:32px;height:32px;border-radius:8px;background:var(--glass-strong);border:1px solid var(--glass-border);display:inline-flex;align-items:center;justify-content:center;font-size:.85rem;font-weight:800;color:var(--c1);letter-spacing:-.02em}
+  .logo span{color:var(--c3)}
+  nav ul{display:flex;gap:32px;list-style:none}
+  nav ul a{color:var(--muted);font-size:.95rem;transition:color .2s}
+  nav ul a:hover{color:var(--c1)}
+  .burger{display:none;background:none;border:none;color:var(--text);font-size:1.5rem;cursor:pointer}
+
+  /* HERO */
+  .hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden}
+  .hero .container{position:relative;z-index:1}
+  .hero-badge{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border-radius:999px;background:var(--glass);border:1px solid var(--glass-border);margin-bottom:16px}
+  .hero-badge .status-dot{width:7px;height:7px;border-radius:50%;background:#4ade80;box-shadow:0 0 8px #4ade80}
+  .hero-badge span{font-size:.78rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--c2)}
+  .hero h1{font-size:clamp(2.4rem,5.5vw,4.2rem);line-height:1.15;letter-spacing:-.03em;margin:12px 0 20px;color:var(--c1)}
+  .hero h1 span{background:linear-gradient(90deg,var(--c1),var(--c2) 50%,var(--c3));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero p{font-size:1.15rem;color:var(--muted);max-width:640px;margin-bottom:36px}
+  .btns{display:flex;gap:16px;flex-wrap:wrap}
+  .btn{padding:14px 28px;border-radius:10px;font-weight:600;transition:transform .2s,box-shadow .2s,background .2s,border-color .2s;display:inline-flex;align-items:center;gap:8px;cursor:pointer}
+  .btn:hover{transform:translateY(-2px)}
+  .btn-primary{background:var(--c1);color:var(--c5);box-shadow:0 8px 24px rgba(224,228,236,.15);border:1px solid transparent}
+  .btn-primary:hover{background:#fff}
+  .btn-ghost{background:var(--glass);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid var(--glass-border);color:var(--c1)}
+  .btn-ghost:hover{border-color:var(--glass-border-hover);background:var(--glass-strong)}
+
+  /* ABOUT */
+  .about-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:56px;align-items:start}
+  .about p{color:var(--muted);margin-bottom:16px}
+  .facts{display:grid;gap:16px}
+  .fact{background:var(--glass);backdrop-filter:blur(24px) saturate(140%);-webkit-backdrop-filter:blur(24px) saturate(140%);border:1px solid var(--glass-border);border-radius:14px;padding:20px;box-shadow:0 8px 32px rgba(0,0,0,.25),inset 0 1px 0 rgba(224,228,236,.08);transition:border-color .2s}
+  .fact:hover{border-color:var(--glass-border-hover)}
+  .fact strong{display:block;font-size:1.6rem;color:var(--c1)}
+  .fact span{color:var(--dim);font-size:.9rem}
+
+  /* SKILLS */
+  .skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px}
+  .card{background:var(--glass);backdrop-filter:blur(24px) saturate(140%);-webkit-backdrop-filter:blur(24px) saturate(140%);border:1px solid var(--glass-border);border-radius:16px;padding:28px;transition:border-color .25s,transform .25s,background .25s;box-shadow:0 8px 32px rgba(0,0,0,.25),inset 0 1px 0 rgba(224,228,236,.08)}
+  .card:hover{border-color:var(--glass-border-hover);background:var(--glass-strong);transform:translateY(-4px)}
+  .card h3{margin-bottom:16px;font-size:1.1rem;color:var(--c1)}
+  .chips{display:flex;flex-wrap:wrap;gap:8px}
+  .chip{background:rgba(24,29,37,.5);border:1px solid var(--glass-border);border-radius:999px;padding:6px 14px;font-size:.85rem;color:var(--c2)}
+
+  /* PROJECTS - Minimalist Design */
+  .projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px}
+  .project{display:flex;flex-direction:column}
+  
+  .project .thumb{
+    height:130px;
+    border-radius:12px;
+    margin-bottom:20px;
+    background:linear-gradient(135deg,rgba(68,80,99,.35) 0%,rgba(24,29,37,.7) 100%);
+    border:1px solid var(--glass-border);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 24px;
+    position:relative;
+    overflow:hidden;
+  }
+  .project .thumb::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:radial-gradient(circle at top right,rgba(224,228,236,.06),transparent 60%);
+  }
+  .project .thumb-label{
+    font-size:.85rem;
+    font-weight:700;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--c1);
+    z-index:1;
+  }
+  .project .thumb-code{
+    font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;
+    font-size:.78rem;
+    color:var(--dim);
+    letter-spacing:.05em;
+    z-index:1;
+  }
+
+  .project p{color:var(--muted);font-size:.95rem;flex:1;margin-bottom:16px}
+  .project .chips{margin-bottom:20px}
+  .links{display:flex;gap:16px;font-size:.9rem;font-weight:600;align-items:center}
+  .links a{color:var(--c1);border-bottom:1px solid transparent;transition:border-color .2s;display:inline-flex;align-items:center;gap:4px}
+  .links a:hover{border-color:var(--c1)}
+
+  /* TIMELINE */
+  .timeline{position:relative;padding-left:32px;border-left:2px solid var(--c4);max-width:720px}
+  .tl-item{position:relative;margin-bottom:40px}
+  .tl-item::before{content:"";position:absolute;left:-41px;top:6px;width:16px;height:16px;border-radius:50%;background:var(--bg2);border:3px solid var(--c2)}
+  .tl-item .date{color:var(--c2);font-size:.85rem;font-weight:600;letter-spacing:.05em}
+  .tl-item h3{margin:4px 0;color:var(--c1)}
+  .tl-item p{color:var(--muted)}
+
+  /* CONTACT */
+  .contact{text-align:center}
+  .contact .container{background:var(--glass);backdrop-filter:blur(24px) saturate(140%);-webkit-backdrop-filter:blur(24px) saturate(140%);border:1px solid var(--glass-border);border-radius:24px;padding:64px 32px;box-shadow:0 8px 32px rgba(0,0,0,.3),inset 0 1px 0 rgba(224,228,236,.08)}
+  .contact p{color:var(--muted);max-width:560px;margin:0 auto 32px}
+  
+  .contact-email-box{
+    display:inline-flex;
+    align-items:center;
+    gap:12px;
+    background:var(--glass-strong);
+    border:1px solid var(--glass-border-hover);
+    padding:8px 12px 8px 20px;
+    border-radius:12px;
+    margin-bottom:28px;
+    flex-wrap:wrap;
+    justify-content:center;
+  }
+  .contact-email-box a{
+    font-size:1.05rem;
+    font-weight:600;
+    color:var(--c1);
+  }
+  .copy-btn{
+    background:var(--glass);
+    border:1px solid var(--glass-border);
+    color:var(--c2);
+    padding:6px 12px;
+    border-radius:8px;
+    font-size:.8rem;
+    font-weight:600;
+    cursor:pointer;
+    transition:all .2s;
+  }
+  .copy-btn:hover{
+    background:var(--c1);
+    color:var(--c5);
+  }
+
+  .socials{display:flex;justify-content:center;align-items:center;gap:20px;flex-wrap:wrap}
+  .socials a{color:var(--muted);font-weight:600;transition:color .2s;display:inline-flex;align-items:center;gap:6px}
+  .socials a:hover{color:var(--c1)}
+
+  footer{padding:32px 0;text-align:center;color:var(--dim);font-size:.85rem}
+
+  /* CHATBOT */
+  .chat-toggle{position:fixed;bottom:24px;right:24px;z-index:200;width:58px;height:58px;border-radius:50%;cursor:pointer;background:rgba(68,80,99,.45);backdrop-filter:blur(20px) saturate(140%);-webkit-backdrop-filter:blur(20px) saturate(140%);border:1px solid var(--glass-border-hover);color:var(--c1);box-shadow:0 10px 30px rgba(0,0,0,.4);display:flex;align-items:center;justify-content:center;transition:transform .2s,background .2s}
+  .chat-toggle:hover{transform:scale(1.06);background:rgba(121,131,151,.5)}
+  .chat-toggle svg{width:26px;height:26px}
+  .chat-box{position:fixed;bottom:96px;right:24px;z-index:200;width:360px;max-width:calc(100vw - 32px);height:520px;max-height:calc(100vh - 120px);background:rgba(24,29,37,.88);backdrop-filter:blur(28px) saturate(150%);-webkit-backdrop-filter:blur(28px) saturate(150%);border:1px solid var(--glass-border-hover);border-radius:18px;display:flex;flex-direction:column;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.55),inset 0 1px 0 rgba(224,228,236,.1);opacity:0;transform:translateY(16px) scale(.98);pointer-events:none;transition:opacity .25s,transform .25s}
+  .chat-box.open{opacity:1;transform:none;pointer-events:auto}
+  .chat-head{padding:16px 18px;border-bottom:1px solid var(--glass-border);display:flex;align-items:center;justify-content:space-between}
+  .chat-head strong{display:block;font-size:.95rem;color:var(--c1)}
+  .chat-head small{color:var(--dim);font-size:.78rem}
+  .chat-head .dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:#4ade80;margin-right:6px}
+  .chat-close{background:none;border:none;color:var(--muted);font-size:1.3rem;cursor:pointer}
+  .chat-msgs{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:10px}
+  .msg{max-width:85%;padding:10px 14px;border-radius:12px;font-size:.9rem;line-height:1.5;white-space:pre-line}
+  .msg.bot{background:rgba(68,80,99,.35);border:1px solid var(--glass-border);align-self:flex-start;border-bottom-left-radius:4px;color:var(--c1)}
+  .msg.user{background:var(--c1);color:var(--c5);align-self:flex-end;border-bottom-right-radius:4px}
+  .msg.typing span{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--c2);margin-right:3px;animation:blink 1.2s infinite}
+  .msg.typing span:nth-child(2){animation-delay:.2s}.msg.typing span:nth-child(3){animation-delay:.4s}
+  @keyframes blink{0%,80%,100%{opacity:.2}40%{opacity:1}}
+  .chat-sugg{display:flex;gap:6px;flex-wrap:wrap;padding:0 16px 10px}
+  .chat-sugg button{background:rgba(24,29,37,.4);border:1px solid var(--glass-border);color:var(--c2);border-radius:999px;padding:5px 11px;font-size:.78rem;cursor:pointer;transition:all .2s}
+  .chat-sugg button:hover{border-color:var(--glass-border-hover);color:var(--c1);background:rgba(68,80,99,.4)}
+  .chat-form{display:flex;gap:8px;padding:12px;border-top:1px solid var(--glass-border)}
+  .chat-form input{flex:1;background:rgba(16,20,27,.6);border:1px solid var(--glass-border);border-radius:8px;padding:10px 12px;color:var(--text);font-size:.9rem;outline:none}
+  .chat-form input::placeholder{color:var(--dim)}
+  .chat-form input:focus{border-color:var(--c3)}
+  .chat-form button{background:var(--c1);border:none;color:var(--c5);border-radius:8px;padding:0 16px;font-weight:600;cursor:pointer}
+
+  /* Animations */
+  html.js .reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+  html.js .reveal.visible{opacity:1;transform:none}
+
+  @media(max-width:768px){
+    section{padding:72px 0}
+    nav ul{position:fixed;top:64px;right:0;left:0;background:rgba(24,29,37,.95);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);flex-direction:column;gap:0;border-bottom:1px solid var(--glass-border);display:none}
+    nav ul.open{display:flex}
+    nav ul li a{display:block;padding:16px 24px}
+    .burger{display:block}
+    .about-grid{grid-template-columns:1fr}
+    .contact .container{padding:48px 20px;border-radius:16px}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="container">
+    <a href="#" class="logo">
+      <div class="logo-badge">PF</div>
+      <span>Pharel<b>.FOLIGAN</b></span>
+    </a>
+    <button class="burger" aria-label="Menu" onclick="document.getElementById('menu').classList.toggle('open')">&#9776;</button>
+    <ul id="menu">
+      <li><a href="#apropos">À propos</a></li>
+      <li><a href="#competences">Compétences</a></li>
+      <li><a href="#projets">Projets</a></li>
+      <li><a href="#parcours">Parcours</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="container">
+    <div class="hero-badge">
+      <span class="status-dot"></span>
+      <span>Étudiant en IA & Big Data • ESGIS Lomé</span>
+    </div>
+    <h1>Bonjour, je suis <span>Folly Pharel FOLIGAN</span>.<br>Je code des applications utiles, du web à l'IA.</h1>
+    <p>Étudiant en IA & Big Data à l'ESGIS Lomé et développeur junior autodidacte. J'ai déjà réalisé et mis en ligne une application web avec IA intégrée, un outil Python de bureau et un site vitrine. À la recherche d'un stage pour progresser aux côtés de professionnels.</p>
+    <div class="btns">
+      <a href="#projets" class="btn btn-primary">Voir mes projets</a>
+      <a href="#contact" class="btn btn-ghost">Me contacter</a>
+      <a href="CV_Folly_Pharel_FOLIGAN.pdf" download class="btn btn-ghost">Télécharger mon CV</a>
+    </div>
+  </div>
+</header>
+
+<section id="apropos" class="about">
+  <div class="container reveal">
+    <span class="tag">À propos</span>
+    <h2>Qui suis-je ?</h2>
+    <div class="about-grid">
+      <div>
+        <p>Je suis <strong>Folly Pharel FOLIGAN AZEDOHO</strong>, étudiant en licence Intelligence Artificielle et Big Data à l'ESGIS (École Supérieure de Gestion, d'Informatique et des Sciences) à Lomé, Togo. J'ai validé ma première année et je suis admis en deuxième année pour la rentrée 2026. Titulaire d'un baccalauréat série F2 (électronique) obtenu en 2025.</p>
+        <p>En parallèle de mes études, j'apprends en construisant : une application web avec Next.js et PostgreSQL, l'intégration d'une API d'intelligence artificielle, un outil Python avec interface graphique, des sites vitrines mis en ligne sur Vercel et Netlify. Chaque projet m'a fait découvrir de nouvelles technologies, que je continue d'approfondir.</p>
+        <p>Curieux et rigoureux, je continue à me former en autonomie à travers des projets personnels et des contributions open source publiées sur GitHub.</p>
+      </div>
+      <div class="facts">
+        <div class="fact"><strong>L1 validée</strong><span>Admis en L2 IA & Big Data (ESGIS)</span></div>
+        <div class="fact"><strong>5+</strong><span>Projets déployés ou publiés en open source</span></div>
+        <div class="fact"><strong>Lomé, Togo</strong><span>Disponible pour un stage</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="competences">
+  <div class="container reveal">
+    <span class="tag">Compétences</span>
+    <h2>Ce que je sais faire</h2>
+    <p class="sub">Ce que je pratique régulièrement, ce que j'ai découvert à travers mes projets, et ce que j'apprends en ce moment.</p>
+    <div class="skills-grid">
+      <div class="card">
+        <h3>Maîtrisé</h3>
+        <div class="chips"><span class="chip">Python</span><span class="chip">HTML / CSS</span><span class="chip">JavaScript</span><span class="chip">Git / GitHub</span><span class="chip">Vercel / Netlify</span></div>
+      </div>
+      <div class="card">
+        <h3>Notions - Web</h3>
+        <div class="chips"><span class="chip">TypeScript</span><span class="chip">React</span><span class="chip">Next.js</span><span class="chip">Node.js</span><span class="chip">Drizzle ORM</span><span class="chip">Tkinter</span></div>
+      </div>
+      <div class="card">
+        <h3>Notions - Données & IA</h3>
+        <div class="chips"><span class="chip">PostgreSQL</span><span class="chip">SQL</span><span class="chip">API Gemini</span><span class="chip">JWT</span><span class="chip">Pandas / NumPy</span><span class="chip">C++</span></div>
+      </div>
+      <div class="card">
+        <h3>En cours d'apprentissage</h3>
+        <div class="chips"><span class="chip">Machine learning</span><span class="chip">Statistiques</span><span class="chip">Big Data</span><span class="chip">Anglais (B1)</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projets">
+  <div class="container reveal">
+    <span class="tag">Projets</span>
+    <h2>Mes réalisations</h2>
+    <p class="sub">Quelques projets concrets sur lesquels j'ai travaillé, seul ou en équipe.</p>
+    <div class="projects-grid">
+      <article class="card project">
+        <div class="thumb">
+          <span class="thumb-label">SaaS &bull; IA</span>
+          <span class="thumb-code">liora-ai.vercel.app</span>
+        </div>
+        <h3>Liora - Plateforme SaaS avec IA</h3>
+        <p>Application web proposant un générateur de CV, un résumeur de PDF et un correcteur de texte grâce à l'API Gemini. Expérience avec Next.js, base PostgreSQL (Drizzle ORM) et authentification JWT. Mise en ligne sur Vercel.</p>
+        <div class="chips"><span class="chip">Next.js</span><span class="chip">React 19</span><span class="chip">TypeScript</span><span class="chip">PostgreSQL</span><span class="chip">Gemini AI</span></div>
+        <div class="links"><a href="https://liora-ai.vercel.app" target="_blank" rel="noopener noreferrer">Voir le site</a><span style="color:var(--dim)">Code privé</span></div>
+      </article>
+
+      <article class="card project">
+        <div class="thumb">
+          <span class="thumb-label">Web Vitrine</span>
+          <span class="thumb-code">Netlify Deploy</span>
+        </div>
+        <h3>Site vitrine - Groupe Le Champion</h3>
+        <p>Proposition commerciale de site vitrine pour une chaîne de 14 supermarchés au Togo : univers produits, promotions, magasins avec itinéraires, espace fournisseurs et contact. Maquette, responsive et hébergement Netlify.</p>
+        <div class="chips"><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">JavaScript</span><span class="chip">Netlify</span></div>
+        <div class="links"><a href="https://proposition-lechampion.netlify.app" target="_blank" rel="noopener noreferrer">Voir le site</a></div>
+      </article>
+
+      <article class="card project">
+        <div class="thumb">
+          <span class="thumb-label">Desktop GUI</span>
+          <span class="thumb-code">Python &bull; Tkinter</span>
+        </div>
+        <h3>Folder Compressor</h3>
+        <p>Application de bureau avec interface graphique moderne (thème AMOLED) qui compresse en lot chaque sous-dossier en archive .zip, .cbz ou .7z. Filtrage de la file, extensions personnalisées, protection contre l'écrasement. Licence MIT.</p>
+        <div class="chips"><span class="chip">Python</span><span class="chip">Tkinter</span><span class="chip">zipfile</span></div>
+        <div class="links"><a href="https://github.com/arielleEi/Folder-Compressor" target="_blank" rel="noopener noreferrer">Code source</a></div>
+      </article>
+
+      <article class="card project">
+        <div class="thumb">
+          <span class="thumb-label">Automatisation</span>
+          <span class="thumb-code">Python &bull; Scraping</span>
+        </div>
+        <h3>Outil de téléchargement automatisé</h3>
+        <p>Script Python d'extraction et de téléchargement automatisé d'images depuis le web, avec organisation des fichiers par chapitre, gestion des erreurs réseau et adaptation aux changements de structure des pages. Projet expérimental.</p>
+        <div class="chips"><span class="chip">Python</span><span class="chip">requests</span><span class="chip">Web scraping</span></div>
+        <div class="links"><span style="color:var(--dim)">Code privé</span></div>
+      </article>
+
+      <article class="card project">
+        <div class="thumb">
+          <span class="thumb-label">Système Windows</span>
+          <span class="thumb-code">C++ &bull; Windhawk</span>
+        </div>
+        <h3>Mod Windhawk - Personnalisation Windows</h3>
+        <p>Module Windhawk de redirection de ressources système permettant de personnaliser l'apparence de l'interface Windows (style One UI).</p>
+        <div class="chips"><span class="chip">C++</span><span class="chip">Windows</span></div>
+        <div class="links"><a href="https://github.com/arielleEi/windhawk-resource-redirect-oneui85" target="_blank" rel="noopener noreferrer">Code source</a></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="parcours">
+  <div class="container reveal">
+    <span class="tag">Parcours</span>
+    <h2>Formation et étapes clés</h2>
+    <p class="sub">Les étapes de mon parcours académique et de mes réalisations techniques.</p>
+    <div class="timeline">
+      <div class="tl-item">
+        <span class="date">RENTRÉE 2026</span>
+        <h3>Admis en Licence 2 - Intelligence Artificielle & Big Data</h3>
+        <p>ESGIS, Lomé, Togo. Programme : machine learning, bases de données avancées, statistiques, architecture Big Data.</p>
+      </div>
+      <div class="tl-item">
+        <span class="date">2025 - 2026</span>
+        <h3>Licence 1 - Intelligence Artificielle & Big Data (validée)</h3>
+        <p>ESGIS, Lomé, Togo. Algorithmique, programmation Python, mathématiques pour l'informatique, introduction aux bases de données.</p>
+      </div>
+      <div class="tl-item">
+        <span class="date">2025 - 2026</span>
+        <h3>Projets personnels déployés</h3>
+        <p>Conception et mise en production de Liora (SaaS Next.js + Gemini AI) sur Vercel, du site Groupe Le Champion sur Netlify et publication d'outils Python open source sur GitHub.</p>
+      </div>
+      <div class="tl-item">
+        <span class="date">2025</span>
+        <h3>Baccalauréat série F2 (Électronique)</h3>
+        <p>Lomé, Togo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="container reveal">
+    <span class="tag">Contact</span>
+    <h2>Travaillons ensemble</h2>
+    <p>Je suis ouvert aux opportunités de stage, aux projets collaboratifs et aux échanges autour de la data et de l'IA. N'hésitez pas à me contacter.</p>
+    
+    <div class="contact-email-box">
+      <a href="mailto:pharelffoligan@gmail.com" id="emailLink">pharelffoligan@gmail.com</a>
+      <button type="button" class="copy-btn" id="copyBtn" onclick="copyEmail()">Copier l'email</button>
+    </div>
+
+    <div class="socials">
+      <a href="https://github.com/arielleEi" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="https://www.linkedin.com" id="linkedinLink" target="_blank" rel="noopener noreferrer" class="btn btn-ghost" style="padding:10px 20px;transform:none">LinkedIn</a>
+      <a href="tel:+22898080246">+228 98 08 02 46</a>
+      <a href="https://wa.me/22898080246" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">&copy; <span id="year"></span> Folly Pharel FOLIGAN - Étudiant IA & Big Data, ESGIS Lomé</div>
+</footer>
+
+<!-- CHATBOT -->
+<button class="chat-toggle" id="chatToggle" aria-label="Ouvrir l'assistant">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-8 8H7l-4 3v-6a8 8 0 0 1 1-4 8 8 0 0 1 7-5h2a8 8 0 0 1 8 4z"/></svg>
+</button>
+<div class="chat-box" id="chatBox" role="dialog" aria-label="Assistant du portfolio">
+  <div class="chat-head">
+    <div><strong>Assistant du portfolio</strong><small><span class="dot"></span>Posez-moi une question sur Pharel</small></div>
+    <button class="chat-close" id="chatClose" aria-label="Fermer">&times;</button>
+  </div>
+  <div class="chat-msgs" id="chatMsgs"></div>
+  <div class="chat-sugg" id="chatSugg"></div>
+  <form class="chat-form" id="chatForm" autocomplete="off">
+    <input type="text" id="chatInput" placeholder="Écrivez votre question..." maxlength="300">
+    <button type="submit">Envoyer</button>
+  </form>
+</div>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  function copyEmail() {
+    const email = "pharelffoligan@gmail.com";
+    navigator.clipboard.writeText(email).then(() => {
+      const btn = document.getElementById('copyBtn');
+      const original = btn.textContent;
+      btn.textContent = "Copié !";
+      setTimeout(() => { btn.textContent = original; }, 2000);
+    });
+  }
+
+  /* ================= CHATBOT =================
+     Modifie l'objet PROFIL ci-dessous : le bot s'en sert pour répondre.
+     Option : renseigne API_URL pour brancher une vraie IA.
+  ============================================ */
+  const PROFIL = {
+    nom: "Folly Pharel FOLIGAN AZEDOHO",
+    prenom: "Pharel",
+    ecole: "ESGIS (École Supérieure de Gestion, d'Informatique et des Sciences), Lomé, Togo",
+    niveau: "licence Intelligence Artificielle et Big Data (première année validée, admis en deuxième année pour la rentrée 2026)",
+    bac: "baccalauréat série F2 (électronique), obtenu en 2025",
+    ville: "Lomé, Togo",
+    email: "pharelffoligan@gmail.com",
+    telephone: "+228 98 08 02 46",
+    linkedin: "https://www.linkedin.com", 
+    github: "https://github.com/arielleEi",
+    dispo: "disponible pour un stage en développement web, Python ou IA, en présentiel à Lomé ou à distance",
+    langues: "français (courant) et anglais (niveau B1)",
+    competences: {
+      maitrise: ["Python", "HTML / CSS", "JavaScript", "Git / GitHub", "déploiement Vercel / Netlify"],
+      notions: ["TypeScript", "React", "Next.js", "Node.js", "Drizzle ORM", "PostgreSQL", "SQL", "API Gemini", "JWT", "Tkinter", "C++", "Pandas / NumPy"],
+      apprentissage: ["machine learning", "statistiques", "Big Data"]
+    },
+    projets: [
+      {nom:"Liora", desc:"une application web avec générateur de CV, résumeur de PDF et correcteur de texte via l'API Gemini, sa première expérience avec Next.js, PostgreSQL et JWT, mise en ligne sur Vercel (liora-ai.vercel.app)", tech:"Next.js, React 19, TypeScript, PostgreSQL, Drizzle ORM, Gemini AI", mots:["loria","liora","saas","cv","gemini","next","nextjs","react","pdf","correcteur"]},
+      {nom:"Site vitrine Groupe Le Champion", desc:"une proposition de site vitrine pour une chaîne de 14 supermarchés au Togo, avec promotions, magasins, espace fournisseurs et contact, déployée sur Netlify (proposition-lechampion.netlify.app)", tech:"HTML, CSS, JavaScript, Netlify", mots:["champion","supermarche","vitrine","netlify","magasin"]},
+      {nom:"Folder Compressor", desc:"une application de bureau avec interface graphique AMOLED qui compresse en lot des sous-dossiers en archives .zip, .cbz ou .7z, publiée sous licence MIT", tech:"Python, Tkinter", mots:["folder","compress","archive","zip","tkinter","bureau","desktop"]},
+      {nom:"Outil de téléchargement automatisé", desc:"un script d'extraction et de téléchargement automatisé d'images depuis le web avec gestion des erreurs réseau (code privé, projet expérimental)", tech:"Python, requests, web scraping", mots:["telecharg","download","scrap","automat","image"]},
+      {nom:"Mod Windhawk", desc:"un module de redirection de ressources pour personnaliser l'interface de Windows", tech:"C++", mots:["windhawk","windows","mod","c++","cpp"]}
+    ],
+    interets: "l'intelligence artificielle, le développement d'outils open source et la culture manga et animation japonaise"
+  };
+  const API_URL = "";
+
+  const norm = s => s.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"");
+  const has = (t, arr) => arr.some(w => t.includes(norm(w)));
+  const pick = arr => arr[Math.floor(Math.random()*arr.length)];
+  const prenom = PROFIL.prenom;
+
+  function repondre(q){
+    const t = norm(q.trim());
+    if(!t) return "Je vous écoute. Posez-moi une question sur le parcours, les compétences ou les projets de "+prenom+".";
+
+    if(has(t,["bonjour","salut","hello","bonsoir","hey","coucou","yo"]))
+      return pick(["Bonjour et bienvenue sur le portfolio de "+prenom+". Que souhaitez-vous savoir ?","Bonjour. Je peux vous renseigner sur les compétences, les projets, la formation ou les coordonnées de "+prenom+"."]);
+    if(has(t,["merci","thanks","parfait","super","top"]))
+      return "Avec plaisir. N'hésitez pas si vous avez une autre question.";
+    if(has(t,["au revoir","bye","a plus","a bientot","ciao"]))
+      return "Au revoir et merci de votre visite. Vous pouvez contacter "+prenom+" à "+PROFIL.email+".";
+
+    // Projet précis
+    for(const p of PROFIL.projets){
+      if(has(t,p.mots)) return p.nom+" : c'est "+p.desc+". Technologies utilisées : "+p.tech+". Vous trouverez les détails dans la section Projets.";
+    }
+
+    if(has(t,["projet","realisation","realise","portfolio","travaux","construit","developpe"]))
+      return prenom+" a réalisé "+PROFIL.projets.length+" projets principaux :\n"+PROFIL.projets.map(p=>"- "+p.nom+" ("+p.tech+")").join("\n")+"\n\nDemandez-moi des détails sur l'un d'eux.";
+
+    if(has(t,["python","java","typescript","sql","c++","langage","programm","code","coder","web","site","front","back","framework","node","react","next","outil","git","github","vercel","deploi","machine learning","ia","intelligence artificielle","donnees","base de donnees","postgres","big data","competence","skill","sait faire","technolog","techno","stack","maitrise","capable","niveau"]))
+      return "Compétences de "+prenom+", en toute transparence :\n- Maîtrisé : "+PROFIL.competences.maitrise.join(", ")+"\n- Notions (découvertes via ses projets) : "+PROFIL.competences.notions.join(", ")+"\n- En cours d'apprentissage : "+PROFIL.competences.apprentissage.join(", ")+"\n\nIl apprend vite en pratiquant et cherche un stage pour consolider ces bases.";
+    if(has(t,["stage","alternance","embauch","recrut","disponib","emploi","job","travail","poste","mission","freelance"]))
+      return prenom+" est "+PROFIL.dispo+". Pour une proposition, écrivez à "+PROFIL.email+" ou appelez le "+PROFIL.telephone+".";
+    if(has(t,["ecole","esgis","etud","formation","universite","licence","diplome","bac","cursus","annee","niveau","parcours"]))
+      return prenom+" est en "+PROFIL.niveau+" à l'"+PROFIL.ecole+". Il a obtenu son "+PROFIL.bac+". Détails dans la section Parcours.";
+    if(has(t,["experience","stage precedent","entreprise","professionnel"]))
+      return prenom+" n'a pas encore d'expérience en entreprise, mais il a déjà mis plusieurs projets en production (Liora sur Vercel, site Groupe Le Champion sur Netlify) et publié des outils open source. Il recherche justement un premier stage.";
+    if(has(t,["contact","email","mail","telephone","tel","numero","joindre","appeler","ecrire","linkedin","reseau"]))
+      return "Vous pouvez joindre "+prenom+" :\n- Email : "+PROFIL.email+"\n- Téléphone / WhatsApp : "+PROFIL.telephone+"\n- GitHub : "+PROFIL.github+"\n- LinkedIn : via la section Contact.";
+    if(has(t,["ou habite","ville","localis","pays","togo","lome","habite","situe","vit"]))
+      return prenom+" est basé à "+PROFIL.ville+". Il est ouvert au travail à distance.";
+    if(has(t,["langue","anglais","francais","parle"]))
+      return prenom+" parle "+PROFIL.langues+".";
+    if(has(t,["interet","passion","aime","centre","hobby","loisir","motive","pourquoi"]))
+      return "Ce qui motive "+prenom+" : "+PROFIL.interets+".";
+    if(has(t,["cv","curriculum","resume","telecharger"]))
+      return "Le CV de "+prenom+" est téléchargeable via le bouton « Télécharger mon CV » en haut de la page, ou sur demande à "+PROFIL.email+".";
+    if(has(t,["qui es tu","tu es qui","t es qui","tu es quoi","c est quoi","robot","bot","humain","chatgpt"]))
+      return "Je suis l'assistant du portfolio de "+prenom+". Je réponds aux questions sur son profil, ses compétences, ses projets et ses coordonnées.";
+    if(has(t,["qui est","presente","a propos","about","c est qui","parle moi de"]))
+      return PROFIL.nom+" est étudiant en "+PROFIL.niveau+" à l'"+PROFIL.ecole+". Développeur junior autodidacte, il a déjà mis en ligne une application web avec IA intégrée, un outil Python et un site vitrine, et recherche un stage pour progresser.";
+    if(has(t,["age","ans","naissance","vieux"]))
+      return "Cette information n'est pas publiée ici. Vous pouvez la demander directement à "+prenom+" via "+PROFIL.email+".";
+
+    return pick([
+      "Je ne suis pas sûr de comprendre. Je peux vous parler de : ses compétences, ses projets, sa formation, sa disponibilité pour un stage ou ses coordonnées.",
+      "Bonne question, mais elle sort de ce que je connais. Essayez par exemple : « Quels sont ses projets ? » ou « Comment le contacter ? ». Pour tout autre sujet, écrivez à "+PROFIL.email+"."
+    ]);
+  }
+
+  async function repondreAPI(q){
+    const r = await fetch(API_URL,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({question:q,profil:PROFIL})});
+    const d = await r.json(); return d.answer;
+  }
+
+  const box=document.getElementById('chatBox'),msgs=document.getElementById('chatMsgs'),form=document.getElementById('chatForm'),input=document.getElementById('chatInput'),sugg=document.getElementById('chatSugg');
+  const SUGG=["Quels sont ses projets ?","Parle-moi de Liora","Ses compétences ?","Comment le contacter ?"];
+  SUGG.forEach(s=>{const b=document.createElement('button');b.type='button';b.textContent=s;b.onclick=()=>envoyer(s);sugg.appendChild(b);});
+
+  function add(txt,cls){const d=document.createElement('div');d.className='msg '+cls;d.textContent=txt;msgs.appendChild(d);msgs.scrollTop=msgs.scrollHeight;return d;}
+  async function envoyer(q){
+    if(!q.trim())return; add(q,'user'); input.value='';
+    const ty=add('','bot typing'); ty.innerHTML='<span></span><span></span><span></span>';
+    let rep;
+    try{ rep = API_URL ? await repondreAPI(q) : await new Promise(r=>setTimeout(()=>r(repondre(q)),500+Math.random()*500)); }
+    catch(e){ rep = repondre(q); }
+    ty.remove(); add(rep,'bot');
+  }
+  form.addEventListener('submit',e=>{e.preventDefault();envoyer(input.value);});
+  let opened=false;
+  function toggle(o){box.classList.toggle('open',o);if(o&&!opened){opened=true;add("Bonjour. Je suis l'assistant du portfolio de "+prenom+". Posez-moi une question sur son parcours, ses compétences ou ses projets.",'bot');}if(o)input.focus();}
+  document.getElementById('chatToggle').onclick=()=>toggle(!box.classList.contains('open'));
+  document.getElementById('chatClose').onclick=()=>toggle(false);
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')toggle(false);});
+
+  /* ===== Animation d'apparition + menu mobile ===== */
+  const reveals = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+    }, { threshold: 0, rootMargin: '0px 0px -10% 0px' });
+    reveals.forEach(el => obs.observe(el));
+    setTimeout(() => reveals.forEach(el => el.classList.add('visible')), 1500);
+  } else {
+    reveals.forEach(el => el.classList.add('visible'));
+  }
+  document.querySelectorAll('#menu a').forEach(a => a.addEventListener('click', () => document.getElementById('menu').classList.remove('open')));
+</script>
+</body>
+</html>
