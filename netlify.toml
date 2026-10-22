@@ -1,0 +1,8 @@
+[build]
+  publish = "."
+  command = ""
+
+[[redirects]]
+  from = "/portfolio/*"
+  to = "/:splat"
+  status = 301
