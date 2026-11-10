@@ -1,643 +1,2439 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script>if("IntersectionObserver" in window)document.documentElement.classList.add("js");</script>
-<title>Folly Pharel FOLIGAN - Étudiant IA & Big Data | Développeur</title>
-<meta name="description" content="Portfolio de Folly Pharel FOLIGAN, étudiant en IA & Big Data à l'ESGIS Lomé (admis en 2e année), développeur Python et web.">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Folly Pharel FOLIGAN — IA, Big Data, Web &amp; Électronique</title>
+  <meta name="description" content="Portfolio de Folly Pharel FOLIGAN AZEDOHO : étudiant en L2 IA & Big Data à l'ESGIS Lomé, Bac F2 électronique, développeur Python et web. Disponible pour un stage.">
 
-<!-- Favicon -->
-<link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <!-- Favicon (sceau Shoji & latérite) -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
 
-<!-- Open Graph & Meta Réseaux Sociaux -->
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://pharel-portfolio.netlify.app/">
-<meta property="og:title" content="Folly Pharel FOLIGAN - Étudiant IA & Big Data | Développeur">
-<meta property="og:description" content="Portfolio de Folly Pharel FOLIGAN : applications SaaS avec IA, outils Python, développement web et data.">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Folly Pharel FOLIGAN - Portfolio IA & Développeur">
-<meta name="twitter:description" content="Découvrez mes réalisations et mon parcours en Intelligence Artificielle et Big Data.">
+  <!-- Open Graph & Réseaux Sociaux -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://pharel-portfolio.netlify.app/">
+  <meta property="og:title" content="Folly Pharel FOLIGAN — Portfolio IA, Web & Électronique">
+  <meta property="og:description" content="Du matériel F2 aux applications IA : Liora (Next.js + Gemini), outils Python open source, vitrines déployées et prototypes Arduino.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Folly Pharel FOLIGAN — Portfolio IA & Développeur">
+  <meta name="twitter:description" content="Étudiant en IA & Big Data à l'ESGIS Lomé. Disponible pour un stage.">
 
-<style>
-  :root{
-    --c1:#eef1f7;--c2:#c3cad8;--c3:#8d99ad;--c4:#47546a;--c5:#181d25;
-    --bg:#141a24;--bg2:#1b2230;
-    --glass:rgba(88,102,126,.20);--glass-strong:rgba(88,102,126,.34);--glass-border:rgba(232,236,244,.13);--glass-border-hover:rgba(255,196,110,.40);
-    --text:#eef1f7;--muted:#c3cad8;--dim:#97a3b6;
-    /* Accent chaud : casse le gris/bleu et réchauffe la page */
-    --amber:#ffb02e;--amber-deep:#ff8a3d;--amber-light:#ffce7a;
-    --amber-soft:rgba(255,176,46,.13);--amber-line:rgba(255,176,46,.42);--amber-glow:rgba(255,154,60,.30);
-    --ink:#1c1206;
-    --accent:var(--amber);--accent2:var(--amber-light);
-  }
-  *{margin:0;padding:0;box-sizing:border-box}
-  html{scroll-behavior:smooth}
-  body{font-family:"Segoe UI",system-ui,-apple-system,Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;position:relative}
-  /* Acrylic backdrop: soft blobs + subtle noise */
-  body::before{content:"";position:fixed;inset:0;z-index:-2;background:
-    radial-gradient(760px 540px at 86% 6%,rgba(255,176,46,.17),transparent 62%),
-    radial-gradient(660px 620px at 6% 88%,rgba(255,138,61,.13),transparent 62%),
-    radial-gradient(620px 480px at 50% 42%,rgba(96,150,220,.12),transparent 66%),
-    linear-gradient(180deg,#11161e,#1a2130)}
-  body::after{content:"";position:fixed;inset:0;z-index:-1;opacity:.06;pointer-events:none;
-    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
-  a{color:inherit;text-decoration:none}
-  .container{max-width:1100px;margin:0 auto;padding:0 24px}
-  section{padding:96px 0}
-  h2{font-size:2rem;margin-bottom:12px;letter-spacing:-.02em;color:var(--c1)}
-  .sub{color:var(--dim);margin-bottom:48px;max-width:600px}
-  .tag{display:inline-block;font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);font-weight:700;margin-bottom:12px}
-  .tag::before{content:"";display:inline-block;width:18px;height:2px;border-radius:2px;background:var(--amber);margin-right:9px;vertical-align:middle;box-shadow:0 0 10px var(--amber-glow)}
-  ::selection{background:rgba(255,176,46,.32);color:#fff}
+  <!-- Polices éditoriales (chargement non bloquant avec font-display: swap) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  /* Acrylic surface */
-  .acrylic{background:var(--glass);backdrop-filter:blur(24px) saturate(140%);-webkit-backdrop-filter:blur(24px) saturate(140%);border:1px solid var(--glass-border);box-shadow:0 8px 32px rgba(0,0,0,.35),inset 0 1px 0 rgba(224,228,236,.08)}
+  <style>
+    /* ==========================================================================
+       SYSTÈME DE DESIGN — SHOJI & VERRE DÉPOLI CLAIR (4 COULEURS HEX STRICTES)
+       ========================================================================== */
+    :root {
+      /* Palette exacte 4 couleurs */
+      --stone: #EAE4DA;         /* Fond pierre chaude / lin minéral */
+      --shoji: #F6F3EC;         /* Base voile acrylic sablé */
+      --ink: #191816;           /* Encre sumi (contraste > 14:1) */
+      --terra: #A33210;         /* Latérite / terracotta togolaise (contraste > 5.5:1) */
 
-  /* NAV */
-  nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(20,26,36,.62);backdrop-filter:blur(20px) saturate(140%);-webkit-backdrop-filter:blur(20px) saturate(140%);border-bottom:1px solid var(--glass-border)}
-  nav .container{display:flex;align-items:center;justify-content:space-between;height:64px}
-  .logo{font-weight:700;font-size:1.1rem;color:var(--c1);display:flex;align-items:center;gap:10px}
-  .logo-badge{width:32px;height:32px;border-radius:8px;background:linear-gradient(145deg,var(--amber-light),var(--amber) 55%,var(--amber-deep));border:1px solid rgba(255,206,122,.55);display:inline-flex;align-items:center;justify-content:center;font-size:.85rem;font-weight:800;color:var(--ink);letter-spacing:-.02em;box-shadow:0 4px 16px rgba(255,154,60,.30)}
-  .logo span{color:var(--c1)}
-  .logo b{color:var(--amber-light)}
-  nav ul{display:flex;gap:32px;list-style:none}
-  nav ul a{color:var(--muted);font-size:.95rem;transition:color .2s;position:relative}
-  nav ul a::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:2px;border-radius:2px;background:var(--amber);transform:scaleX(0);transform-origin:left;transition:transform .25s}
-  nav ul a:hover{color:var(--amber-light)}
-  nav ul a:hover::after{transform:scaleX(1)}
-  .burger{display:none;background:none;border:none;color:var(--text);font-size:1.5rem;cursor:pointer}
+      /* Déclinaisons d'opacité strictement issues de la palette */
+      --ink-74: rgba(25, 24, 22, 0.74);   /* Texte secondaire (contraste >= 6.6:1) */
+      --ink-55: rgba(25, 24, 22, 0.56);   /* Filets / repères */
+      --ink-16: rgba(25, 24, 22, 0.16);   /* Bordures structurelles */
+      --ink-08: rgba(25, 24, 22, 0.08);   /* Trame shoji subtile */
+      --terra-14: rgba(163, 50, 16, 0.14);
+      --terra-35: rgba(163, 50, 16, 0.35);
 
-  /* HERO */
-  .hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden}
-  .hero .container{position:relative;z-index:1}
-  .hero-badge{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border-radius:999px;background:var(--glass);border:1px solid var(--glass-border);margin-bottom:16px}
-  .hero-badge .status-dot{width:7px;height:7px;border-radius:50%;background:var(--amber);box-shadow:0 0 10px var(--amber)}
-  .hero-badge span{font-size:.78rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--c2)}
-  .hero h1{font-size:clamp(2.4rem,5.5vw,4.2rem);line-height:1.15;letter-spacing:-.03em;margin:12px 0 20px;color:var(--c1)}
-  .hero h1 span{background:linear-gradient(100deg,#ffffff 0%,var(--amber-light) 42%,var(--amber) 75%,var(--amber-deep) 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
-  .hero p{font-size:1.15rem;color:var(--muted);max-width:640px;margin-bottom:36px}
-  .btns{display:flex;gap:16px;flex-wrap:wrap}
-  .btn{padding:14px 28px;border-radius:10px;font-weight:600;transition:transform .2s,box-shadow .2s,background .2s,border-color .2s;display:inline-flex;align-items:center;gap:8px;cursor:pointer}
-  .btn:hover{transform:translateY(-2px)}
-  .btn-primary{background:linear-gradient(135deg,var(--amber-light),var(--amber) 55%,var(--amber-deep));color:var(--ink);box-shadow:0 10px 30px rgba(255,154,60,.32);border:1px solid rgba(255,255,255,.22);font-weight:700}
-  .btn-primary:hover{background:linear-gradient(135deg,#ffd995,var(--amber-light) 55%,var(--amber));box-shadow:0 16px 38px rgba(255,154,60,.45)}
-  .btn-ghost{background:var(--glass);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid var(--glass-border);color:var(--c1)}
-  .btn-ghost:hover{border-color:var(--amber-line);background:var(--amber-soft);color:var(--amber-light)}
+      /* Matière Acrylic Shoji (opacité >= 0.80 pour préserver les contrastes WCAG) */
+      --acrylic-bg: rgba(246, 243, 236, 0.80);
+      --acrylic-strong: rgba(246, 243, 236, 0.90);
+      --acrylic-nav: rgba(234, 228, 218, 0.82);
 
-  /* ABOUT */
-  .about-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:56px;align-items:start}
-  .about p{color:var(--muted);margin-bottom:16px}
-  .facts{display:grid;gap:16px}
-  .fact{background:var(--glass);backdrop-filter:blur(24px) saturate(140%);-webkit-backdrop-filter:blur(24px) saturate(140%);border:1px solid var(--glass-border);border-radius:14px;padding:20px;box-shadow:0 8px 32px rgba(0,0,0,.25),inset 0 1px 0 rgba(224,228,236,.08);transition:border-color .2s}
-  .fact:hover{border-color:var(--amber-line);background:var(--glass-strong)}
-  .fact strong{display:block;font-size:1.6rem;color:var(--c1);position:relative;padding-left:14px}
-  .fact strong::before{content:"";position:absolute;left:0;top:.4em;width:4px;height:.85em;border-radius:2px;background:var(--amber);box-shadow:0 0 10px var(--amber-glow)}
-  .fact span{color:var(--dim);font-size:.9rem}
+      /* Typographies */
+      --font-display: "Fraunces", Georgia, "Times New Roman", serif;
+      --font-body: "Source Sans 3", system-ui, -apple-system, "Segoe UI", sans-serif;
 
-  /* SKILLS */
-  .skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px}
-  .card{background:var(--glass);backdrop-filter:blur(24px) saturate(140%);-webkit-backdrop-filter:blur(24px) saturate(140%);border:1px solid var(--glass-border);border-radius:16px;padding:28px;transition:border-color .25s,transform .25s,background .25s;box-shadow:0 8px 32px rgba(0,0,0,.25),inset 0 1px 0 rgba(224,228,236,.08)}
-  .card:hover{border-color:var(--amber-line);background:var(--glass-strong);transform:translateY(-4px);box-shadow:0 14px 40px rgba(0,0,0,.34),0 0 0 1px rgba(255,176,46,.10),inset 0 1px 0 rgba(232,236,244,.10)}
-  .card h3{margin-bottom:16px;font-size:1.1rem;color:var(--c1);display:flex;align-items:center;gap:10px}
-  .card h3::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--amber);box-shadow:0 0 10px var(--amber-glow);flex:none}
-  .chips{display:flex;flex-wrap:wrap;gap:8px}
-  .chip{background:rgba(20,26,36,.5);border:1px solid var(--glass-border);border-radius:999px;padding:6px 14px;font-size:.85rem;color:var(--c2);transition:border-color .2s,color .2s,background .2s}
-  .chip:hover{border-color:var(--amber-line);color:var(--amber-light);background:var(--amber-soft)}
+      /* Échelles & géométrie */
+      --max-w: 1180px;
+      --gutter: clamp(20px, 4vw, 48px);
+      --radius: 2px;
+      --nav-h: 70px;
+    }
 
-  /* PROJECTS - Minimalist Design */
-  .projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px}
-  .project{display:flex;flex-direction:column}
-  
-  .project .thumb{
-    height:130px;
-    border-radius:12px;
-    margin-bottom:20px;
-    background:linear-gradient(135deg,rgba(255,176,46,.20) 0%,rgba(255,138,61,.08) 45%,rgba(24,29,37,.82) 100%);
-    border:1px solid var(--glass-border);
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    padding:0 24px;
-    position:relative;
-    overflow:hidden;
-  }
-  .project .thumb::before{
-    content:"";
-    position:absolute;
-    inset:0;
-    background:radial-gradient(circle at top right,rgba(255,196,110,.16),transparent 62%),radial-gradient(circle at 15% 120%,rgba(255,138,61,.14),transparent 60%);
-  }
-  .project .thumb::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:linear-gradient(90deg,var(--amber),transparent);opacity:.55;transition:opacity .25s}
-  .project:hover .thumb{border-color:var(--amber-line)}
-  .project:hover .thumb::after{opacity:1}
-  .project .thumb-label{
-    font-size:.85rem;
-    font-weight:700;
-    letter-spacing:.12em;
-    text-transform:uppercase;
-    color:var(--amber-light);
-    z-index:1;
-  }
-  .project .thumb-code{
-    font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;
-    font-size:.78rem;
-    color:var(--dim);
-    letter-spacing:.05em;
-    z-index:1;
-  }
+    /* Reset & base accessible */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-  .project p{color:var(--muted);font-size:.95rem;flex:1;margin-bottom:16px}
-  .project .chips{margin-bottom:20px}
-  .links{display:flex;gap:16px;font-size:.9rem;font-weight:600;align-items:center}
-  .links a{color:var(--amber);border-bottom:1px solid transparent;transition:border-color .2s,color .2s;display:inline-flex;align-items:center;gap:4px}
-  .links a:hover{border-color:var(--amber);color:var(--amber-light)}
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+      background-color: var(--stone);
+      color: var(--ink);
+    }
 
-  /* TIMELINE */
-  .timeline{position:relative;padding-left:32px;border-left:2px solid var(--c4);max-width:720px}
-  .tl-item{position:relative;margin-bottom:40px}
-  .tl-item::before{content:"";position:absolute;left:-41px;top:6px;width:16px;height:16px;border-radius:50%;background:var(--bg2);border:3px solid var(--amber);box-shadow:0 0 0 4px rgba(255,176,46,.10),0 0 14px rgba(255,154,60,.30)}
-  .tl-item .date{color:var(--amber);font-size:.85rem;font-weight:700;letter-spacing:.05em}
-  .tl-item h3{margin:4px 0;color:var(--c1)}
-  .tl-item p{color:var(--muted)}
+    body {
+      font-family: var(--font-body);
+      font-size: 1rem;
+      line-height: 1.65;
+      color: var(--ink);
+      background-color: var(--stone);
+      overflow-x: clip;
+      -webkit-font-smoothing: antialiased;
+      position: relative;
+      min-height: 100vh;
+    }
 
-  /* CONTACT */
-  .contact{text-align:center}
-  .contact .container{background:var(--glass);backdrop-filter:blur(24px) saturate(140%);-webkit-backdrop-filter:blur(24px) saturate(140%);border:1px solid var(--glass-border);border-radius:24px;padding:64px 32px;box-shadow:0 8px 32px rgba(0,0,0,.3),inset 0 1px 0 rgba(224,228,236,.08)}
-  .contact p{color:var(--muted);max-width:560px;margin:0 auto 32px}
-  
-  .contact-email-box{
-    display:inline-flex;
-    align-items:center;
-    gap:12px;
-    background:linear-gradient(135deg,rgba(255,176,46,.10),var(--glass-strong));
-    border:1px solid var(--amber-line);
-    box-shadow:0 10px 30px rgba(0,0,0,.25),0 0 0 1px rgba(255,176,46,.08);
-    padding:8px 12px 8px 20px;
-    border-radius:12px;
-    margin-bottom:28px;
-    flex-wrap:wrap;
-    justify-content:center;
-  }
-  .contact-email-box a{
-    font-size:1.05rem;
-    font-weight:600;
-    color:var(--c1);
-  }
-  .copy-btn{
-    background:var(--glass);
-    border:1px solid var(--glass-border);
-    color:var(--c2);
-    padding:6px 12px;
-    border-radius:8px;
-    font-size:.8rem;
-    font-weight:600;
-    cursor:pointer;
-    transition:all .2s;
-  }
-  .copy-btn:hover{
-    background:var(--amber);
-    border-color:var(--amber);
-    color:var(--ink);
-  }
+    /* ==========================================================================
+       ARRIÈRE-PLAN SOLAIRE & TRAME SHOJI (DONNE CORPS À L'ACRYLIC)
+       ========================================================================== */
+    .ambient-field {
+      position: fixed;
+      inset: 0;
+      z-index: -2;
+      pointer-events: none;
+      background:
+        radial-gradient(640px 520px at 84% 16%, rgba(163, 50, 16, 0.16), transparent 68%),
+        radial-gradient(560px 560px at 10% 72%, rgba(163, 50, 16, 0.10), transparent 65%),
+        radial-gradient(480px 420px at 62% 88%, rgba(25, 24, 22, 0.06), transparent 70%),
+        var(--stone);
+    }
 
-  .socials{display:flex;justify-content:center;align-items:center;gap:20px;flex-wrap:wrap}
-  .socials a{color:var(--muted);font-weight:600;transition:color .2s;display:inline-flex;align-items:center;gap:6px}
-  .socials a:hover{color:var(--amber-light)}
+    /* Grain minéral très discret + filets verticaux de châssis shoji */
+    .ambient-grain {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      opacity: 0.045;
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140'><filter id='g'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23g)'/></svg>");
+    }
 
-  footer{padding:32px 0;text-align:center;color:var(--dim);font-size:.85rem}
+    .shoji-mullions {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      max-width: var(--max-w);
+      margin: 0 auto;
+      border-left: 1px solid var(--ink-08);
+      border-right: 1px solid var(--ink-08);
+    }
 
-  /* CHATBOT */
-  .chat-toggle{position:fixed;bottom:24px;right:24px;z-index:200;width:58px;height:58px;border-radius:50%;cursor:pointer;background:linear-gradient(145deg,var(--amber-light),var(--amber) 55%,var(--amber-deep));backdrop-filter:blur(20px) saturate(140%);-webkit-backdrop-filter:blur(20px) saturate(140%);border:1px solid rgba(255,255,255,.28);color:var(--ink);box-shadow:0 12px 34px rgba(255,154,60,.38);display:flex;align-items:center;justify-content:center;transition:transform .2s,box-shadow .2s}
-  .chat-toggle:hover{transform:scale(1.06);box-shadow:0 16px 40px rgba(255,154,60,.5)}
-  .chat-toggle svg{width:26px;height:26px}
-  .chat-box{position:fixed;bottom:96px;right:24px;z-index:200;width:360px;max-width:calc(100vw - 32px);height:520px;max-height:calc(100vh - 120px);background:rgba(24,29,37,.90);backdrop-filter:blur(28px) saturate(150%);-webkit-backdrop-filter:blur(28px) saturate(150%);border:1px solid rgba(232,236,244,.22);border-radius:18px;display:flex;flex-direction:column;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.55),inset 0 1px 0 rgba(224,228,236,.1);opacity:0;transform:translateY(16px) scale(.98);pointer-events:none;transition:opacity .25s,transform .25s}
-  .chat-box.open{opacity:1;transform:none;pointer-events:auto}
-  .chat-head{padding:16px 18px;border-bottom:1px solid var(--glass-border);display:flex;align-items:center;justify-content:space-between}
-  .chat-head strong{display:block;font-size:.95rem;color:var(--c1)}
-  .chat-head small{color:var(--dim);font-size:.78rem}
-  .chat-head .dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:#4ade80;margin-right:6px}
-  .chat-close{background:none;border:none;color:var(--muted);font-size:1.3rem;cursor:pointer}
-  .chat-msgs{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:10px}
-  .msg{max-width:85%;padding:10px 14px;border-radius:12px;font-size:.9rem;line-height:1.5;white-space:pre-line}
-  .msg.bot{background:rgba(68,80,99,.35);border:1px solid var(--glass-border);align-self:flex-start;border-bottom-left-radius:4px;color:var(--c1)}
-  .msg.user{background:linear-gradient(135deg,var(--amber-light),var(--amber));color:var(--ink);font-weight:600;align-self:flex-end;border-bottom-right-radius:4px}
-  .msg.typing span{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--c2);margin-right:3px;animation:blink 1.2s infinite}
-  .msg.typing span:nth-child(2){animation-delay:.2s}.msg.typing span:nth-child(3){animation-delay:.4s}
-  @keyframes blink{0%,80%,100%{opacity:.2}40%{opacity:1}}
-  .chat-sugg{display:flex;gap:6px;flex-wrap:wrap;padding:0 16px 10px}
-  .chat-sugg button{background:rgba(24,29,37,.4);border:1px solid var(--glass-border);color:var(--c2);border-radius:999px;padding:5px 11px;font-size:.78rem;cursor:pointer;transition:all .2s}
-  .chat-sugg button:hover{border-color:var(--amber-line);color:var(--amber-light);background:var(--amber-soft)}
-  .chat-form{display:flex;gap:8px;padding:12px;border-top:1px solid var(--glass-border)}
-  .chat-form input{flex:1;background:rgba(16,20,27,.65);border:1px solid var(--glass-border);border-radius:8px;padding:10px 12px;color:var(--text);font-size:.9rem;outline:none}
-  .chat-form input::placeholder{color:var(--dim)}
-  .chat-form input:focus{border-color:var(--amber-line);box-shadow:0 0 0 3px rgba(255,176,46,.12)}
-  .chat-form button{background:linear-gradient(135deg,var(--amber-light),var(--amber));border:none;color:var(--ink);border-radius:8px;padding:0 16px;font-weight:700;cursor:pointer}
+    .shoji-mullions::before,
+    .shoji-mullions::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background: var(--ink-08);
+    }
 
-  /* Animations */
-  html.js .reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
-  html.js .reveal.visible{opacity:1;transform:none}
+    .shoji-mullions::before { left: 33.333%; }
+    .shoji-mullions::after { left: 66.666%; }
 
-  @media(max-width:768px){
-    section{padding:72px 0}
-    nav ul{position:fixed;top:64px;right:0;left:0;background:rgba(20,26,36,.97);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);flex-direction:column;gap:0;border-bottom:1px solid var(--glass-border);display:none}
-    nav ul.open{display:flex}
-    nav ul li a{display:block;padding:16px 24px}
-    .burger{display:block}
-    .about-grid{grid-template-columns:1fr}
-    .contact .container{padding:48px 20px;border-radius:16px}
-  }
-</style>
+    /* Surface Acrylic Shoji réutilisable */
+    .shoji-acrylic {
+      background: var(--acrylic-bg);
+      backdrop-filter: blur(22px) saturate(135%);
+      -webkit-backdrop-filter: blur(22px) saturate(135%);
+      border: 1px solid var(--ink-16);
+      border-radius: var(--radius);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.65);
+    }
+
+    ::selection {
+      background: var(--terra);
+      color: var(--shoji);
+    }
+
+    /* Liens & focus clavier haute visibilité (WCAG) */
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    :focus-visible {
+      outline: 3px solid var(--ink);
+      outline-offset: 3px;
+      border-radius: 2px;
+    }
+
+    .skip-link {
+      position: absolute;
+      left: -9999px;
+      top: 12px;
+      z-index: 999;
+      background: var(--ink);
+      color: var(--shoji);
+      padding: 12px 18px;
+      font-weight: 700;
+      border-radius: var(--radius);
+    }
+
+    .skip-link:focus {
+      left: 16px;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    .container {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 var(--gutter);
+    }
+
+    /* ==========================================================================
+       NAVIGATION PRINCIPALE (ACRYLIC FIXE + BARRE DE PROGRESSION)
+       ========================================================================== */
+    .site-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      height: var(--nav-h);
+      background: var(--acrylic-nav);
+      backdrop-filter: blur(20px) saturate(135%);
+      -webkit-backdrop-filter: blur(20px) saturate(135%);
+      border-bottom: 1px solid var(--ink-16);
+    }
+
+    .scroll-progress {
+      position: absolute;
+      left: 0;
+      bottom: -1px;
+      height: 2px;
+      width: 0%;
+      background: var(--terra);
+      transition: width 0.08s linear;
+      pointer-events: none;
+    }
+
+    .nav-inner {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      min-height: 44px;
+      padding-right: 8px;
+    }
+
+    /* Sceau Hanko inspiré du graphisme japonais */
+    .hanko-seal {
+      width: 34px;
+      height: 34px;
+      display: grid;
+      place-items: center;
+      border: 1.5px solid var(--ink);
+      background: var(--shoji);
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 0.95rem;
+      letter-spacing: -0.04em;
+      color: var(--ink);
+      position: relative;
+      flex: none;
+    }
+
+    .hanko-seal::after {
+      content: "";
+      position: absolute;
+      top: 3px;
+      right: 3px;
+      width: 5px;
+      height: 5px;
+      background: var(--terra);
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.15;
+    }
+
+    .brand-name {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 1.05rem;
+      letter-spacing: -0.01em;
+    }
+
+    .brand-meta {
+      font-size: 0.78rem;
+      color: var(--ink-74);
+      letter-spacing: 0.04em;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      list-style: none;
+      gap: 8px;
+    }
+
+    .nav-links a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+      padding: 0 14px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--ink-74);
+      position: relative;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 14px;
+      right: 14px;
+      bottom: 8px;
+      height: 2px;
+      background: var(--terra);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.24s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a[aria-current="true"] {
+      color: var(--ink);
+    }
+
+    .nav-links a:hover::after,
+    .nav-links a[aria-current="true"]::after {
+      transform: scaleX(1);
+    }
+
+    .nav-links a[aria-current="true"] {
+      color: var(--terra);
+    }
+
+    .nav-toggle {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-width: 44px;
+      min-height: 44px;
+      padding: 0 14px;
+      background: var(--acrylic-bg);
+      border: 1px solid var(--ink-16);
+      border-radius: var(--radius);
+      color: var(--ink);
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    /* ==========================================================================
+       BOUTONS & CONTRÔLES (CIBLE TACTILE >= 44px, RETOUR VISUEL NET)
+       ========================================================================== */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 48px;
+      padding: 12px 22px;
+      border-radius: var(--radius);
+      font-family: var(--font-body);
+      font-size: 0.98rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.18s ease;
+      text-align: center;
+    }
+
+    .btn:active {
+      transform: translateY(1px);
+    }
+
+    .btn-primary {
+      background: var(--terra);
+      color: var(--shoji);
+      border: 1px solid var(--terra);
+    }
+
+    .btn-primary:hover {
+      background: var(--ink);
+      border-color: var(--ink);
+      color: var(--shoji);
+    }
+
+    .btn-shoji {
+      background: var(--acrylic-strong);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      color: var(--ink);
+      border: 1px solid var(--ink-16);
+    }
+
+    .btn-shoji:hover {
+      border-color: var(--terra);
+      color: var(--terra);
+    }
+
+    .btn-text {
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+      padding: 8px 4px;
+      color: var(--terra);
+      font-weight: 600;
+      border-bottom: 1px solid var(--terra-35);
+      border-radius: 0;
+    }
+
+    .btn-text:hover {
+      color: var(--ink);
+      border-bottom-color: var(--ink);
+    }
+
+    /* ==========================================================================
+       HERO ÉDITORIAL ASYMÉTRIQUE (AU-DESSUS DE LA LIGNE DE FLOTTAISON)
+       ========================================================================== */
+    .hero {
+      padding: clamp(40px, 7vh, 84px) 0 clamp(56px, 8vh, 96px);
+      border-bottom: 1px solid var(--ink-16);
+      position: relative;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.45fr) minmax(280px, 0.85fr);
+      gap: clamp(32px, 5vw, 64px);
+      align-items: end;
+    }
+
+    .status-line {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 6px 12px;
+      background: var(--acrylic-bg);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid var(--ink-16);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink);
+      margin-bottom: 24px;
+    }
+
+    .status-square {
+      width: 8px;
+      height: 8px;
+      background: var(--terra);
+      flex: none;
+    }
+
+    .hero h1 {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: clamp(2.35rem, 5.1vw, 4.35rem);
+      line-height: 1.06;
+      letter-spacing: -0.025em;
+      color: var(--ink);
+      margin-bottom: 22px;
+      max-width: 16ch;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      font-weight: 500;
+      color: var(--terra);
+    }
+
+    .hero-lead {
+      font-size: clamp(1.05rem, 1.4vw, 1.2rem);
+      color: var(--ink-74);
+      max-width: 56ch;
+      margin-bottom: 30px;
+    }
+
+    .hero-lead strong {
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 14px 18px;
+    }
+
+    /* Panneau Shoji latéral (fiche d'identité architecturale) */
+    .hero-dossier {
+      padding: 26px 28px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Disque solaire terracotta subtil qui diffuse à travers le panneau acrylic */
+    .hero-dossier::before {
+      content: "";
+      position: absolute;
+      top: -42px;
+      right: -42px;
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(163, 50, 16, 0.22), transparent 72%);
+      pointer-events: none;
+    }
+
+    .dossier-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding-bottom: 14px;
+      margin-bottom: 14px;
+      border-bottom: 1px solid var(--ink-16);
+    }
+
+    .dossier-kicker {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--terra);
+    }
+
+    .dossier-ref {
+      font-family: var(--font-display);
+      font-size: 0.9rem;
+      color: var(--ink-74);
+    }
+
+    .dossier-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .dossier-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--ink-08);
+    }
+
+    .dossier-row:last-child {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+
+    .dossier-row dt {
+      font-size: 0.86rem;
+      color: var(--ink-74);
+      flex: none;
+    }
+
+    .dossier-row dd {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--ink);
+      text-align: right;
+    }
+
+    /* ==========================================================================
+       EN-TÊTES DE SECTION ÉDITORIAUX
+       ========================================================================== */
+    .section {
+      padding: clamp(64px, 9vw, 112px) 0;
+      border-bottom: 1px solid var(--ink-16);
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 18px 28px;
+      align-items: end;
+      margin-bottom: clamp(36px, 5vw, 56px);
+    }
+
+    .section-num {
+      font-family: var(--font-display);
+      font-weight: 500;
+      font-style: italic;
+      font-size: clamp(2.4rem, 4vw, 3.4rem);
+      line-height: 0.9;
+      color: var(--terra);
+    }
+
+    .section-title-wrap h2 {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: clamp(1.85rem, 3.4vw, 2.75rem);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+    }
+
+    .section-title-wrap p {
+      color: var(--ink-74);
+      margin-top: 8px;
+      max-width: 58ch;
+    }
+
+    /* ==========================================================================
+       01 — RÉALISATIONS PHARES (ASYMÉTRIE PAR NIVEAU DE PREUVE)
+       ========================================================================== */
+    .featured-list {
+      display: grid;
+      gap: 28px;
+    }
+
+    .featured-item {
+      display: grid;
+      grid-template-columns: minmax(220px, 0.85fr) minmax(0, 1.55fr);
+      gap: clamp(24px, 4vw, 48px);
+      padding: clamp(24px, 3.5vw, 40px);
+      transition: border-color 0.24s ease, background-color 0.24s ease;
+    }
+
+    .featured-item:hover {
+      border-color: var(--terra-35);
+      background: var(--acrylic-strong);
+    }
+
+    .featured-visual {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 20px;
+      border-right: 1px solid var(--ink-16);
+      padding-right: clamp(16px, 3vw, 36px);
+    }
+
+    .featured-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 12px;
+    }
+
+    .proj-index {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--terra);
+    }
+
+    .proj-domain {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink-74);
+      text-align: right;
+    }
+
+    /* Schémas techniques SVG minimalistes (zéro image stock, zéro emoji) */
+    .proj-diagram {
+      width: 100%;
+      height: 108px;
+      border: 1px solid var(--ink-16);
+      background: rgba(234, 228, 218, 0.55);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px;
+    }
+
+    .proj-diagram svg {
+      width: 100%;
+      height: 100%;
+      max-width: 220px;
+    }
+
+    .featured-body {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .featured-body h3 {
+      font-family: var(--font-display);
+      font-size: clamp(1.45rem, 2.3vw, 1.9rem);
+      font-weight: 600;
+      line-height: 1.18;
+      letter-spacing: -0.015em;
+      color: var(--ink);
+      margin-bottom: 10px;
+    }
+
+    .featured-body p {
+      color: var(--ink-74);
+      max-width: 62ch;
+    }
+
+    .proj-stack {
+      font-size: 0.92rem;
+      color: var(--ink);
+      padding-top: 14px;
+      border-top: 1px solid var(--ink-08);
+    }
+
+    .proj-stack span {
+      color: var(--ink-74);
+      font-weight: 600;
+      margin-right: 8px;
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .proj-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    .proj-note {
+      font-size: 0.88rem;
+      color: var(--ink-74);
+    }
+
+    /* ==========================================================================
+       INDEX SECONDAIRE EN DIVULGATION PROGRESSIVE (VITRINES WEB 04-08)
+       ========================================================================== */
+    .vitrines-block {
+      margin-top: 48px;
+    }
+
+    .vitrines-bar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 18px;
+    }
+
+    .vitrines-bar h3 {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    .vitrines-bar p {
+      color: var(--ink-74);
+      font-size: 1rem;
+    }
+
+    .vitrines-ledger {
+      overflow: hidden;
+    }
+
+    .vitrine-item {
+      border-bottom: 1px solid var(--ink-16);
+    }
+
+    .vitrine-item:last-child {
+      border-bottom: 0;
+    }
+
+    .vitrine-item summary {
+      list-style: none;
+      display: grid;
+      grid-template-columns: 44px minmax(0, 1.4fr) auto auto;
+      align-items: center;
+      gap: 16px;
+      min-height: 60px;
+      padding: 14px 24px;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+
+    .vitrine-item summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .vitrine-item summary:hover {
+      background: rgba(163, 50, 16, 0.05);
+    }
+
+    .vitrine-num {
+      font-family: var(--font-display);
+      font-weight: 600;
+      color: var(--terra);
+      font-size: 1rem;
+    }
+
+    .vitrine-name {
+      font-weight: 600;
+      color: var(--ink);
+      font-size: 1.02rem;
+    }
+
+    .vitrine-sector {
+      font-size: 0.85rem;
+      color: var(--ink-74);
+      letter-spacing: 0.04em;
+    }
+
+    .vitrine-indicator {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--terra);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .vitrine-item[open] .vitrine-indicator::after {
+      content: "−";
+      font-size: 1.1rem;
+    }
+
+    .vitrine-item:not([open]) .vitrine-indicator::after {
+      content: "+";
+      font-size: 1.1rem;
+    }
+
+    .vitrine-panel {
+      padding: 0 24px 22px 84px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 18px 32px;
+      border-top: 1px dashed var(--ink-16);
+      padding-top: 16px;
+      background: rgba(246, 243, 236, 0.55);
+    }
+
+    .vitrine-panel p {
+      max-width: 60ch;
+      color: var(--ink-74);
+      font-size: 1rem;
+    }
+
+    .vitrine-panel p.vitrine-tech {
+      margin-top: 8px;
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    /* ==========================================================================
+       02 — PROFIL & COMPÉTENCES HONNÊTES (ONGLETS ACCESSIBLES)
+       ========================================================================== */
+    .profile-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr);
+      gap: clamp(32px, 5vw, 64px);
+      align-items: start;
+    }
+
+    .about-copy p {
+      color: var(--ink-74);
+      margin-bottom: 18px;
+      max-width: 54ch;
+    }
+
+    .about-copy p strong {
+      color: var(--ink);
+    }
+
+    .strengths-line {
+      margin-top: 24px;
+      padding-top: 18px;
+      border-top: 1px solid var(--ink-16);
+      font-size: 0.94rem;
+      color: var(--ink);
+    }
+
+    .strengths-line span {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--terra);
+      margin-bottom: 6px;
+    }
+
+    .skills-box {
+      padding: clamp(22px, 3vw, 32px);
+    }
+
+    .tabs-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding-bottom: 18px;
+      margin-bottom: 22px;
+      border-bottom: 1px solid var(--ink-16);
+    }
+
+    .tab-btn {
+      min-height: 44px;
+      padding: 8px 16px;
+      border: 1px solid var(--ink-16);
+      border-radius: var(--radius);
+      background: transparent;
+      color: var(--ink-74);
+      font-family: var(--font-body);
+      font-size: 0.92rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .tab-btn:hover {
+      border-color: var(--ink);
+      color: var(--ink);
+    }
+
+    .tab-btn[aria-selected="true"] {
+      background: var(--ink);
+      border-color: var(--ink);
+      color: var(--shoji);
+    }
+
+    .skill-group {
+      margin-bottom: 22px;
+    }
+
+    .skill-group:last-child {
+      margin-bottom: 0;
+    }
+
+    .skill-group[hidden] {
+      display: none;
+    }
+
+    .skill-group-title {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 4px;
+    }
+
+    .skill-group-desc {
+      font-size: 0.9rem;
+      color: var(--ink-74);
+      margin-bottom: 14px;
+    }
+
+    .skill-ledger {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 10px 24px;
+    }
+
+    .skill-ledger li {
+      padding: 10px 0;
+      border-bottom: 1px solid var(--ink-08);
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 12px;
+      font-size: 1rem;
+    }
+
+    .skill-ledger strong {
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    .skill-ledger span {
+      font-size: 0.82rem;
+      color: var(--ink-74);
+      text-align: right;
+    }
+
+    /* ==========================================================================
+       03 — PARCOURS ACADÉMIQUE & TECHNIQUE
+       ========================================================================== */
+    .timeline-ledger {
+      border-top: 1px solid var(--ink-16);
+    }
+
+    .tl-row {
+      display: grid;
+      grid-template-columns: 180px minmax(0, 1fr);
+      gap: 12px 36px;
+      padding: 26px 0;
+      border-bottom: 1px solid var(--ink-16);
+      align-items: baseline;
+    }
+
+    .tl-date {
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--terra);
+    }
+
+    .tl-content h3 {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 6px;
+    }
+
+    .tl-content p {
+      color: var(--ink-74);
+      max-width: 62ch;
+    }
+
+    .tl-details {
+      margin-top: 10px;
+    }
+
+    .tl-details summary {
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--terra);
+      cursor: pointer;
+    }
+
+    .tl-details p {
+      margin-top: 6px;
+      padding-left: 14px;
+      border-left: 2px solid var(--terra-35);
+      font-size: 1rem;
+    }
+
+    /* ==========================================================================
+       04 — CONTACT DIRECT & CV
+       ========================================================================== */
+    .contact-section {
+      padding: clamp(64px, 9vw, 112px) 0;
+    }
+
+    .contact-frame {
+      padding: clamp(28px, 5vw, 56px);
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(260px, 0.8fr);
+      gap: clamp(28px, 5vw, 56px);
+      align-items: start;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact-frame::before {
+      content: "";
+      position: absolute;
+      bottom: -80px;
+      left: -60px;
+      width: 240px;
+      height: 240px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(163, 50, 16, 0.14), transparent 70%);
+      pointer-events: none;
+    }
+
+    .contact-kicker {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .contact-lead h2 {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 3.8vw, 3rem);
+      font-weight: 600;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+    }
+
+    .contact-lead p {
+      color: var(--ink-74);
+      max-width: 50ch;
+      margin-bottom: 28px;
+    }
+
+    .email-bar {
+      display: inline-flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px 14px;
+      padding: 8px 8px 8px 18px;
+      border: 1px solid var(--ink-16);
+      background: var(--shoji);
+      border-radius: var(--radius);
+      max-width: 100%;
+    }
+
+    .email-bar .btn-copy {
+      min-height: 44px;
+      padding: 8px 16px;
+    }
+
+    .email-bar a {
+      font-weight: 600;
+      font-size: 1.02rem;
+      color: var(--ink);
+      word-break: break-all;
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .copy-feedback {
+      margin-top: 10px;
+      min-height: 24px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--terra);
+    }
+
+    .contact-channels {
+      display: grid;
+      gap: 10px;
+    }
+
+    .channel-link {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      min-height: 48px;
+      padding: 12px 16px;
+      border: 1px solid var(--ink-16);
+      background: rgba(246, 243, 236, 0.65);
+      border-radius: var(--radius);
+      font-weight: 600;
+      color: var(--ink);
+      transition: border-color 0.2s ease, color 0.2s ease, background-color 0.2s ease;
+    }
+
+    .channel-link:hover {
+      border-color: var(--terra);
+      color: var(--terra);
+      background: var(--shoji);
+    }
+
+    .channel-link small {
+      font-weight: 400;
+      color: var(--ink-74);
+      font-size: 0.86rem;
+    }
+
+    /* ==========================================================================
+       FOOTER COMPLET
+       ========================================================================== */
+    .site-footer {
+      border-top: 1px solid var(--ink-16);
+      padding: 36px 0 96px;
+      background: rgba(234, 228, 218, 0.65);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr auto;
+      gap: 24px 36px;
+      align-items: start;
+      font-size: 0.92rem;
+      color: var(--ink-74);
+    }
+
+    .footer-grid strong {
+      color: var(--ink);
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 18px;
+      align-items: center;
+    }
+
+    .footer-links a {
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+      font-weight: 600;
+      color: var(--ink);
+      border-bottom: 1px solid transparent;
+    }
+
+    .footer-links a:hover {
+      color: var(--terra);
+      border-bottom-color: var(--terra);
+    }
+
+    /* ==========================================================================
+       ASSISTANT DISCRET EN TIROIR SHOJI
+       ========================================================================== */
+    .chat-trigger {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      z-index: 150;
+      min-height: 48px;
+      padding: 0 18px;
+      border-radius: var(--radius);
+      background: var(--acrylic-strong);
+      backdrop-filter: blur(22px) saturate(140%);
+      -webkit-backdrop-filter: blur(22px) saturate(140%);
+      border: 1px solid var(--ink-16);
+      color: var(--ink);
+      font-family: var(--font-body);
+      font-size: 0.92rem;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      box-shadow: 0 8px 24px rgba(25, 24, 22, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.7);
+      transition: border-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .chat-trigger:hover {
+      border-color: var(--terra);
+      transform: translateY(-2px);
+    }
+
+    .chat-trigger-dot {
+      width: 8px;
+      height: 8px;
+      background: var(--terra);
+      flex: none;
+    }
+
+    .chat-drawer {
+      position: fixed;
+      right: 20px;
+      bottom: 78px;
+      z-index: 160;
+      width: 370px;
+      max-width: calc(100vw - 32px);
+      height: 490px;
+      max-height: calc(100vh - 110px);
+      background: rgba(246, 243, 236, 0.94);
+      backdrop-filter: blur(26px) saturate(140%);
+      -webkit-backdrop-filter: blur(26px) saturate(140%);
+      border: 1px solid var(--ink-16);
+      border-radius: var(--radius);
+      box-shadow: 0 20px 50px rgba(25, 24, 22, 0.14);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .chat-drawer[hidden] {
+      display: none;
+    }
+
+    .chat-head {
+      padding: 14px 18px;
+      border-bottom: 1px solid var(--ink-16);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .chat-head strong {
+      display: block;
+      font-family: var(--font-display);
+      font-size: 1rem;
+      color: var(--ink);
+    }
+
+    .chat-head small {
+      font-size: 0.82rem;
+      color: var(--ink-74);
+    }
+
+    .chat-close {
+      min-width: 44px;
+      min-height: 44px;
+      background: transparent;
+      border: 1px solid transparent;
+      color: var(--ink);
+      font-size: 1.35rem;
+      cursor: pointer;
+      display: grid;
+      place-items: center;
+      border-radius: var(--radius);
+    }
+
+    .chat-close:hover {
+      border-color: var(--ink-16);
+    }
+
+    .chat-msgs {
+      flex: 1;
+      overflow-y: auto;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .msg {
+      max-width: 86%;
+      padding: 10px 14px;
+      border-radius: var(--radius);
+      font-size: 0.92rem;
+      line-height: 1.5;
+      white-space: pre-line;
+    }
+
+    .msg.bot {
+      align-self: flex-start;
+      background: var(--stone);
+      border: 1px solid var(--ink-16);
+      color: var(--ink);
+    }
+
+    .msg.user {
+      align-self: flex-end;
+      background: var(--terra);
+      color: var(--shoji);
+      font-weight: 600;
+    }
+
+    .chat-sugg {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      padding: 0 16px 10px;
+    }
+
+    .chat-sugg button {
+      min-height: 44px;
+      padding: 8px 12px;
+      background: var(--shoji);
+      border: 1px solid var(--ink-16);
+      border-radius: var(--radius);
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--ink);
+      cursor: pointer;
+    }
+
+    .chat-sugg button:hover {
+      border-color: var(--terra);
+      color: var(--terra);
+    }
+
+    .chat-form {
+      display: flex;
+      gap: 8px;
+      padding: 12px;
+      border-top: 1px solid var(--ink-16);
+      background: var(--shoji);
+    }
+
+    .chat-form input {
+      flex: 1;
+      min-width: 0;
+      min-height: 44px;
+      padding: 8px 12px;
+      border: 1px solid var(--ink-16);
+      border-radius: var(--radius);
+      background: var(--stone);
+      color: var(--ink);
+      font-family: var(--font-body);
+      font-size: 0.94rem;
+    }
+
+    .chat-form input::placeholder {
+      color: var(--ink-74);
+    }
+
+    .chat-form button {
+      min-height: 44px;
+      padding: 0 16px;
+      background: var(--ink);
+      color: var(--shoji);
+      border: 1px solid var(--ink);
+      border-radius: var(--radius);
+      font-family: var(--font-body);
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .chat-form button:hover {
+      background: var(--terra);
+      border-color: var(--terra);
+    }
+
+    /* ==========================================================================
+       ANIMATION DISCRÈTE (NE BLOQUE JAMAIS LE CONTENU)
+       ========================================================================== */
+    .fade-in {
+      transition: opacity 0.45s ease, transform 0.45s ease;
+    }
+
+    .fade-in.is-pending {
+      opacity: 0.01;
+      transform: translateY(14px);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .fade-in, .fade-in.is-pending {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+      }
+      .shoji-acrylic, .site-nav, .btn-shoji, .chat-trigger, .chat-drawer {
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+        background: var(--shoji);
+      }
+      .scroll-progress { transition: none; }
+    }
+
+    /* ==========================================================================
+       RESPONSIVE MOBILE-FIRST & TABLETTE
+       ========================================================================== */
+    @media (max-width: 920px) {
+      .hero-grid,
+      .profile-grid,
+      .contact-frame,
+      .featured-item {
+        grid-template-columns: 1fr;
+      }
+
+      .featured-visual {
+        border-right: 0;
+        border-bottom: 1px solid var(--ink-16);
+        padding-right: 0;
+        padding-bottom: 20px;
+      }
+
+      .tl-row {
+        grid-template-columns: 1fr;
+        gap: 6px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .shoji-mullions::before,
+      .shoji-mullions::after {
+        display: none;
+      }
+
+      .nav-toggle {
+        display: inline-flex;
+      }
+
+      .nav-links {
+        position: fixed;
+        top: var(--nav-h);
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        background: rgba(246, 243, 236, 0.96);
+        backdrop-filter: blur(22px);
+        -webkit-backdrop-filter: blur(22px);
+        border-bottom: 1px solid var(--ink-16);
+        padding: 8px var(--gutter) 18px;
+      }
+
+      .nav-links[hidden] {
+        display: none;
+      }
+
+      .nav-links a {
+        border-bottom: 1px solid var(--ink-08);
+        padding: 12px 4px;
+      }
+
+      .nav-links a::after {
+        display: none;
+      }
+
+      .vitrine-item summary {
+        grid-template-columns: 36px minmax(0, 1fr) auto;
+        padding: 14px 16px;
+      }
+
+      .vitrine-sector {
+        display: none;
+      }
+
+      .vitrine-panel {
+        padding: 14px 16px 20px;
+      }
+
+      .site-footer {
+        padding-bottom: 92px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .contact-frame {
+        padding: 22px 18px;
+      }
+
+      .email-bar {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        padding: 8px 8px 8px 14px;
+      }
+
+      .email-bar .btn-copy {
+        width: 100%;
+      }
+    }
+  </style>
 </head>
 <body>
 
-<nav>
-  <div class="container">
-    <a href="#" class="logo">
-      <div class="logo-badge">PF</div>
-      <span>Pharel<b>.FOLIGAN</b></span>
-    </a>
-    <button class="burger" aria-label="Menu" onclick="document.getElementById('menu').classList.toggle('open')">&#9776;</button>
-    <ul id="menu">
-      <li><a href="#apropos">À propos</a></li>
-      <li><a href="#competences">Compétences</a></li>
-      <li><a href="#projets">Projets</a></li>
-      <li><a href="#parcours">Parcours</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </div>
-</nav>
+  <a href="#contenu" class="skip-link">Aller au contenu principal</a>
 
-<header class="hero">
-  <div class="container">
-    <div class="hero-badge">
-      <span class="status-dot"></span>
-      <span>Étudiant en IA & Big Data • ESGIS Lomé</span>
-    </div>
-    <h1>Bonjour, je suis <span>Folly Pharel FOLIGAN</span>.<br>Je code des applications utiles, du web à l'IA.</h1>
-    <p>Étudiant en IA & Big Data à l'ESGIS Lomé et développeur junior autodidacte. J'ai déjà réalisé et mis en ligne une application web avec IA intégrée, plusieurs sites vitrines pour des entreprises locales et un outil Python de bureau. À la recherche d'un stage pour progresser aux côtés de professionnels.</p>
-    <div class="btns">
-      <a href="#projets" class="btn btn-primary">Voir mes projets</a>
-      <a href="#contact" class="btn btn-ghost">Me contacter</a>
-      <a href="CV_Folly_Pharel_FOLIGAN.pdf" download class="btn btn-ghost">Télécharger mon CV</a>
-    </div>
-  </div>
-</header>
+  <!-- Champ lumineux & trame architecturale Shoji -->
+  <div class="ambient-field" aria-hidden="true"></div>
+  <div class="ambient-grain" aria-hidden="true"></div>
+  <div class="shoji-mullions" aria-hidden="true"></div>
 
-<section id="apropos" class="about">
-  <div class="container reveal">
-    <span class="tag">À propos</span>
-    <h2>Qui suis-je ?</h2>
-    <div class="about-grid">
+  <!-- NAVIGATION STICKY -->
+  <nav class="site-nav" aria-label="Navigation principale">
+    <div class="container nav-inner">
+      <a href="#accueil" class="brand">
+        <span class="hanko-seal" aria-hidden="true">PF</span>
+        <span class="brand-text">
+          <span class="brand-name">Pharel FOLIGAN</span>
+          <span class="brand-meta">Lomé · IA, Web &amp; F2</span>
+        </span>
+      </a>
+
+      <button
+        type="button"
+        class="nav-toggle"
+        id="navToggle"
+        aria-expanded="false"
+        aria-controls="navMenu"
+        aria-label="Ouvrir le menu de navigation">
+        Menu
+      </button>
+
+      <ul class="nav-links" id="navMenu">
+        <li><a href="#projets">Projets</a></li>
+        <li><a href="#competences">Compétences</a></li>
+        <li><a href="#parcours">Parcours</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="CV_Folly_Pharel_FOLIGAN.pdf" download>CV (PDF)</a></li>
+      </ul>
+    </div>
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+  </nav>
+
+  <main id="contenu">
+
+    <!-- HERO ÉDITORIAL ASYMÉTRIQUE -->
+    <header id="accueil" class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="status-line">
+            <span class="status-square" aria-hidden="true"></span>
+            <span>Disponible stage · Présentiel Lomé ou distanciel</span>
+          </div>
+
+          <h1>Du silicium aux modèles d’IA — je conçois des systèmes <em>utiles</em>.</h1>
+
+          <p class="hero-lead">
+            Je suis <strong>Folly Pharel FOLIGAN AZEDOHO</strong>, étudiant en Licence 2 <strong>Intelligence Artificielle &amp; Big Data</strong> à l’ESGIS Lomé et diplômé d’un <strong>Bac F2 Électronique</strong>. Je transforme des idées en applications web IA, outils Python et prototypes matériels.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#projets" class="btn btn-primary">Voir les projets phares</a>
+            <a href="CV_Folly_Pharel_FOLIGAN.pdf" download class="btn btn-shoji">Télécharger le CV (PDF)</a>
+            <a href="#contact" class="btn-text">Me contacter</a>
+          </div>
+        </div>
+
+        <!-- Fiche d'identité Shoji Acrylic -->
+        <aside class="shoji-acrylic hero-dossier" aria-label="Repères rapides du profil">
+          <div class="dossier-header">
+            <span class="dossier-kicker">Fiche profil</span>
+            <span class="dossier-ref">Éd. 2026</span>
+          </div>
+          <dl class="dossier-list">
+            <div class="dossier-row">
+              <dt>Formation</dt>
+              <dd>L2 IA &amp; Big Data · ESGIS</dd>
+            </div>
+            <div class="dossier-row">
+              <dt>Socle technique</dt>
+              <dd>Bac F2 Électronique (2025)</dd>
+            </div>
+            <div class="dossier-row">
+              <dt>Réalisations</dt>
+              <dd>8 projets (SaaS, Python, Web, IoT)</dd>
+            </div>
+            <div class="dossier-row">
+              <dt>Langues</dt>
+              <dd>Français (courant) · Anglais (B1)</dd>
+            </div>
+            <div class="dossier-row">
+              <dt>Localisation</dt>
+              <dd>Lomé, Togo</dd>
+            </div>
+          </dl>
+        </aside>
+      </div>
+    </header>
+
+    <!-- SECTION 01 : PROJETS PHARES + INDEX VITRINES -->
+    <section id="projets" class="section">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-num" aria-hidden="true">01</span>
+          <div class="section-title-wrap">
+            <h2>Preuves techniques</h2>
+            <p>Trois réalisations majeures illustrant mes axes forts (IA full-stack, outillage Python, électronique embarquée), suivies de cinq vitrines web déployées pour des acteurs locaux.</p>
+          </div>
+        </div>
+
+        <div class="featured-list">
+          <!-- Projet 01 : Liora -->
+          <article class="shoji-acrylic featured-item fade-in">
+            <div class="featured-visual">
+              <div class="featured-meta">
+                <span class="proj-index">01</span>
+                <span class="proj-domain">SaaS · IA &amp; Web</span>
+              </div>
+              <div class="proj-diagram" aria-hidden="true">
+                <svg viewBox="0 0 220 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="14" y="16" width="44" height="58" stroke="#191816" stroke-width="1.5"/>
+                  <line x1="22" y1="30" x2="50" y2="30" stroke="#191816" stroke-width="1.5"/>
+                  <line x1="22" y1="42" x2="46" y2="42" stroke="#191816" stroke-width="1.5"/>
+                  <line x1="22" y1="54" x2="40" y2="54" stroke="#A33210" stroke-width="1.5"/>
+                  <line x1="58" y1="45" x2="96" y2="45" stroke="#191816" stroke-width="1.5" stroke-dasharray="3 3"/>
+                  <circle cx="110" cy="45" r="14" stroke="#A33210" stroke-width="1.75" fill="#F6F3EC"/>
+                  <circle cx="110" cy="45" r="4" fill="#A33210"/>
+                  <line x1="124" y1="45" x2="162" y2="45" stroke="#191816" stroke-width="1.5"/>
+                  <rect x="162" y="20" width="44" height="50" stroke="#191816" stroke-width="1.5" fill="#F6F3EC"/>
+                  <line x1="170" y1="34" x2="198" y2="34" stroke="#A33210" stroke-width="1.5"/>
+                  <line x1="170" y1="45" x2="194" y2="45" stroke="#191816" stroke-width="1.5"/>
+                  <line x1="170" y1="56" x2="188" y2="56" stroke="#191816" stroke-width="1.5"/>
+                </svg>
+              </div>
+            </div>
+            <div class="featured-body">
+              <div>
+                <h3>Liora — Plateforme SaaS avec IA</h3>
+                <p>Application web en ligne réunissant un générateur de CV, un résumeur de PDF et un correcteur de texte via l’API Gemini. Conçue pour expérimenter une architecture complète : authentification JWT, base PostgreSQL pilotée avec Drizzle ORM et déploiement sur Vercel.</p>
+              </div>
+              <div>
+                <p class="proj-stack"><span>Architecture</span>Next.js · React 19 · TypeScript · PostgreSQL · Drizzle ORM · Gemini AI · JWT</p>
+                <div class="proj-actions">
+                  <a href="https://liora-ai.vercel.app" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                    Voir le site live ↗<span class="sr-only"> (nouvel onglet)</span>
+                  </a>
+                  <span class="proj-note">Dépôt source privé · Déployé sur Vercel</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Projet 02 : Folder Compressor -->
+          <article class="shoji-acrylic featured-item fade-in">
+            <div class="featured-visual">
+              <div class="featured-meta">
+                <span class="proj-index">02</span>
+                <span class="proj-domain">Desktop · Python</span>
+              </div>
+              <div class="proj-diagram" aria-hidden="true">
+                <svg viewBox="0 0 220 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="18" y="18" width="52" height="54" stroke="#191816" stroke-width="1.5"/>
+                  <rect x="28" y="28" width="52" height="54" stroke="#191816" stroke-width="1.5" fill="#F6F3EC"/>
+                  <path d="M92 45 H132 M124 38 L132 45 L124 52" stroke="#A33210" stroke-width="1.75"/>
+                  <rect x="146" y="23" width="56" height="44" stroke="#191816" stroke-width="1.75" fill="#F6F3EC"/>
+                  <line x1="164" y1="23" x2="164" y2="67" stroke="#A33210" stroke-width="1.5" stroke-dasharray="4 3"/>
+                  <text x="176" y="49" font-family="Georgia, serif" font-size="11" fill="#191816" font-weight="700">.ZIP</text>
+                </svg>
+              </div>
+            </div>
+            <div class="featured-body">
+              <div>
+                <h3>Folder Compressor — Outil bureau open source</h3>
+                <p>Utilitaire de bureau doté d’une interface graphique moderne (thème AMOLED) qui compresse en lot chaque sous-dossier sélectionné en archive .zip, .cbz ou .7z. Intègre le filtrage de file d’attente, les extensions personnalisées et une protection contre l’écrasement.</p>
+              </div>
+              <div>
+                <p class="proj-stack"><span>Technologies</span>Python · Tkinter · zipfile · Licence MIT</p>
+                <div class="proj-actions">
+                  <a href="https://github.com/arielleEi/Folder-Compressor" target="_blank" rel="noopener noreferrer" class="btn btn-shoji">
+                    Explorer le code source ↗<span class="sr-only"> (nouvel onglet)</span>
+                  </a>
+                  <span class="proj-note">Open source · GitHub</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Projet 03 : Arduino -->
+          <article class="shoji-acrylic featured-item fade-in">
+            <div class="featured-visual">
+              <div class="featured-meta">
+                <span class="proj-index">03</span>
+                <span class="proj-domain">Embarqué · Bac F2</span>
+              </div>
+              <div class="proj-diagram" aria-hidden="true">
+                <svg viewBox="0 0 220 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="78" y="22" width="64" height="46" stroke="#191816" stroke-width="1.75" fill="#F6F3EC"/>
+                  <line x1="40" y1="33" x2="78" y2="33" stroke="#191816" stroke-width="1.5"/>
+                  <line x1="40" y1="45" x2="78" y2="45" stroke="#A33210" stroke-width="1.5"/>
+                  <line x1="40" y1="57" x2="78" y2="57" stroke="#191816" stroke-width="1.5"/>
+                  <line x1="142" y1="33" x2="180" y2="33" stroke="#191816" stroke-width="1.5"/>
+                  <line x1="142" y1="45" x2="180" y2="45" stroke="#A33210" stroke-width="1.5"/>
+                  <line x1="142" y1="57" x2="180" y2="57" stroke="#191816" stroke-width="1.5"/>
+                  <polyline points="88,48 98,48 103,34 111,56 117,45 132,45" stroke="#A33210" stroke-width="1.75"/>
+                </svg>
+              </div>
+            </div>
+            <div class="featured-body">
+              <div>
+                <h3>Systèmes automatisés sur Arduino</h3>
+                <p>Conception de prototypes matériels issus de ma formation F2 en électronique : automatisation de parking, feux tricolores adaptatifs (détection de l’absence de véhicules pour fluidifier le passage au vert), éclairage par capteur de présence et montages à capteurs infrarouges et de température.</p>
+              </div>
+              <div>
+                <p class="proj-stack"><span>Matériel &amp; Code</span>Arduino · C / C++ · Capteurs IR, présence &amp; température · Électronique</p>
+                <div class="proj-actions">
+                  <span class="proj-note">Prototypes matériels réalisés en laboratoire &amp; autonomie</span>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Divulgation progressive : Index des 5 sites vitrines déployés -->
+        <div class="vitrines-block fade-in">
+          <div class="vitrines-bar">
+            <div>
+              <h3>Index des vitrines web déployées (04 — 08)</h3>
+              <p>Propositions commerciales et concepts responsive mis en ligne sur Netlify pour des structures à Lomé. Cliquez sur une ligne pour ouvrir ses détails.</p>
+            </div>
+            <button type="button" class="btn btn-shoji" id="toggleAllVitrines" aria-expanded="false">
+              Tout déplier
+            </button>
+          </div>
+
+          <div class="shoji-acrylic vitrines-ledger" id="vitrinesLedger">
+            <details class="vitrine-item">
+              <summary>
+                <span class="vitrine-num">04</span>
+                <span class="vitrine-name">Groupe Le Champion</span>
+                <span class="vitrine-sector">Grande Distribution · 14 supermarchés</span>
+                <span class="vitrine-indicator">Détails</span>
+              </summary>
+              <div class="vitrine-panel">
+                <div>
+                  <p>Proposition commerciale de site vitrine pour une chaîne de 14 supermarchés au Togo : univers produits, promotions, localisation des magasins avec itinéraires, espace fournisseurs et contact.</p>
+                  <p class="vitrine-tech">Stack : HTML · CSS · JavaScript · Netlify</p>
+                </div>
+                <a href="https://proposition-lechampion.netlify.app" target="_blank" rel="noopener noreferrer" class="btn btn-shoji">
+                  Ouvrir le site ↗<span class="sr-only"> (nouvel onglet)</span>
+                </a>
+              </div>
+            </details>
+
+            <details class="vitrine-item">
+              <summary>
+                <span class="vitrine-num">05</span>
+                <span class="vitrine-name">La Maison D’À Côté</span>
+                <span class="vitrine-sector">Maison d’hôtes · Lomé</span>
+                <span class="vitrine-indicator">Détails</span>
+              </summary>
+              <div class="vitrine-panel">
+                <div>
+                  <p>Proposition de site vitrine pour une maison d’hôtes à Lomé : présentation des chambres et espaces communs, galerie photo interactive, avis clients, FAQ et simulateur de demande de séjour.</p>
+                  <p class="vitrine-tech">Stack : HTML · CSS · JavaScript · Netlify</p>
+                </div>
+                <a href="https://la-maison-da-cote.netlify.app" target="_blank" rel="noopener noreferrer" class="btn btn-shoji">
+                  Ouvrir le site ↗<span class="sr-only"> (nouvel onglet)</span>
+                </a>
+              </div>
+            </details>
+
+            <details class="vitrine-item">
+              <summary>
+                <span class="vitrine-num">06</span>
+                <span class="vitrine-name">Mint Hotel Togo</span>
+                <span class="vitrine-sector">Hôtellerie · Djidjolé, Lomé</span>
+                <span class="vitrine-indicator">Détails</span>
+              </summary>
+              <div class="vitrine-panel">
+                <div>
+                  <p>Concept de site vitrine pour un hôtel situé à Djidjolé (Lomé) : mise en valeur des chambres, de la piscine extérieure et du restaurant, géolocalisation et formulaire de disponibilité relié à WhatsApp.</p>
+                  <p class="vitrine-tech">Stack : HTML · CSS · JavaScript · Netlify</p>
+                </div>
+                <a href="https://mint-hotel.netlify.app" target="_blank" rel="noopener noreferrer" class="btn btn-shoji">
+                  Ouvrir le site ↗<span class="sr-only"> (nouvel onglet)</span>
+                </a>
+              </div>
+            </details>
+
+            <details class="vitrine-item">
+              <summary>
+                <span class="vitrine-num">07</span>
+                <span class="vitrine-name">Résidence Fafa</span>
+                <span class="vitrine-sector">Résidence hôtelière · Totsi, Lomé</span>
+                <span class="vitrine-indicator">Détails</span>
+              </summary>
+              <div class="vitrine-panel">
+                <div>
+                  <p>Maquette de présentation pour une résidence hôtelière à Totsi (Lomé) : découverte des chambres familiales, jardin et terrasse, restauration, itinéraire Google Maps et préparation de réservation.</p>
+                  <p class="vitrine-tech">Stack : HTML · CSS · JavaScript · Netlify</p>
+                </div>
+                <a href="https://residence-fafa.netlify.app" target="_blank" rel="noopener noreferrer" class="btn btn-shoji">
+                  Ouvrir le site ↗<span class="sr-only"> (nouvel onglet)</span>
+                </a>
+              </div>
+            </details>
+
+            <details class="vitrine-item">
+              <summary>
+                <span class="vitrine-num">08</span>
+                <span class="vitrine-name">Raknis Fashion Boutique</span>
+                <span class="vitrine-sector">Mode &amp; Prêt-à-porter · Lomé</span>
+                <span class="vitrine-indicator">Détails</span>
+              </summary>
+              <div class="vitrine-panel">
+                <div>
+                  <p>Vitrine web pour une boutique de prêt-à-porter et d’accessoires (femme et homme) à Lomé, conçue pour présenter les collections et faciliter la prise de contact directe via WhatsApp.</p>
+                  <p class="vitrine-tech">Stack : HTML · CSS · JavaScript · Netlify</p>
+                </div>
+                <a href="https://rhakis.netlify.app" target="_blank" rel="noopener noreferrer" class="btn btn-shoji">
+                  Ouvrir le site ↗<span class="sr-only"> (nouvel onglet)</span>
+                </a>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 02 : PROFIL & COMPÉTENCES HONNÊTES -->
+    <section id="competences" class="section">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-num" aria-hidden="true">02</span>
+          <div class="section-title-wrap">
+            <h2>Profil &amp; Compétences</h2>
+            <p>Une lecture transparente : ce que je pratique régulièrement, ce que j’ai éprouvé sur des projets concrets et ce que j’approfondis en Licence 2.</p>
+          </div>
+        </div>
+
+        <div class="profile-grid">
+          <div class="about-copy fade-in">
+            <p>
+              Étudiant en licence <strong>Intelligence Artificielle et Big Data</strong> à l’ESGIS (École Supérieure de Gestion, d’Informatique et des Sciences) à Lomé, j’ai validé ma première année et suis admis en deuxième année pour la rentrée 2026.
+            </p>
+            <p>
+              Titulaire d’un <strong>baccalauréat série F2 (électronique)</strong> obtenu en 2025, j’aborde le logiciel avec la rigueur du matériel : comprendre le flux complet, du capteur physique ou de la base de données jusqu’à l’interface utilisateur.
+            </p>
+            <p>
+              En parallèle des cours, j’apprends en livrant des projets réels : une application Next.js + PostgreSQL intégrant l’API Gemini, un outil Python de bureau sous licence MIT et des sites vitrines déployés sur Netlify. Je recherche aujourd’hui un <strong>stage</strong> pour progresser aux côtés d’ingénieurs et de praticiens de la donnée.
+            </p>
+
+            <div class="strengths-line">
+              <span>Points forts identifiés</span>
+              Curiosité technique · Rigueur d’exécution · Apprentissage autonome · Mise en production de projets
+            </div>
+          </div>
+
+          <!-- Registre de compétences avec onglets progressifs (pas de barres %, pas de mur de chips) -->
+          <div class="shoji-acrylic skills-box fade-in">
+            <div class="tabs-nav" role="tablist" aria-label="Niveaux de maîtrise des compétences">
+              <button type="button" class="tab-btn" role="tab" id="tab-maitrise" aria-selected="true" aria-controls="panel-maitrise" data-filter="maitrise">Maîtrisé</button>
+              <button type="button" class="tab-btn" role="tab" id="tab-projets" aria-selected="false" aria-controls="panel-projets" data-filter="projets" tabindex="-1">Pratiqué en projet</button>
+              <button type="button" class="tab-btn" role="tab" id="tab-cours" aria-selected="false" aria-controls="panel-cours" data-filter="cours" tabindex="-1">En apprentissage</button>
+              <button type="button" class="tab-btn" role="tab" id="tab-tous" aria-selected="false" aria-controls="panel-maitrise panel-projets panel-cours" data-filter="tous" tabindex="-1">Vue complète</button>
+            </div>
+
+            <div id="skillsPanels">
+              <div class="skill-group" id="panel-maitrise" role="tabpanel" aria-labelledby="tab-maitrise" data-group="maitrise">
+                <h3 class="skill-group-title">Socle maîtrisé</h3>
+                <p class="skill-group-desc">Technologies utilisées de façon autonome sur plusieurs réalisations.</p>
+                <ul class="skill-ledger">
+                  <li><strong>Python</strong><span>Scripts &amp; GUI</span></li>
+                  <li><strong>HTML / CSS</strong><span>Responsive &amp; sémantique</span></li>
+                  <li><strong>JavaScript</strong><span>DOM &amp; interactions</span></li>
+                  <li><strong>Arduino / Capteurs</strong><span>Embarqué F2</span></li>
+                  <li><strong>Git / GitHub</strong><span>Versionnement</span></li>
+                  <li><strong>Vercel / Netlify</strong><span>Mise en ligne</span></li>
+                </ul>
+              </div>
+
+              <div class="skill-group" id="panel-projets" role="tabpanel" aria-labelledby="tab-projets" data-group="projets" hidden>
+                <h3 class="skill-group-title">Notions éprouvées en projet</h3>
+                <p class="skill-group-desc">Outils découverts et assemblés sur Liora, Folder Compressor et mes travaux data.</p>
+                <ul class="skill-ledger">
+                  <li><strong>Next.js &amp; React</strong><span>Web full-stack</span></li>
+                  <li><strong>TypeScript</strong><span>Typage applicatif</span></li>
+                  <li><strong>Node.js</strong><span>Côté serveur</span></li>
+                  <li><strong>PostgreSQL &amp; SQL</strong><span>Bases relationnelles</span></li>
+                  <li><strong>Drizzle ORM</strong><span>Modélisation</span></li>
+                  <li><strong>API Gemini &amp; JWT</strong><span>IA &amp; auth</span></li>
+                  <li><strong>Tkinter</strong><span>Interface desktop</span></li>
+                  <li><strong>Pandas / NumPy</strong><span>Manipulation data</span></li>
+                  <li><strong>C / C++</strong><span>Systèmes &amp; logique</span></li>
+                </ul>
+              </div>
+
+              <div class="skill-group" id="panel-cours" role="tabpanel" aria-labelledby="tab-cours" data-group="cours" hidden>
+                <h3 class="skill-group-title">En cours d’apprentissage (L2)</h3>
+                <p class="skill-group-desc">Axes académiques et linguistiques approfondis pour 2026–2027.</p>
+                <ul class="skill-ledger">
+                  <li><strong>Machine Learning</strong><span>Modèles supervisés</span></li>
+                  <li><strong>Statistiques</strong><span>Fondamentaux IA</span></li>
+                  <li><strong>Big Data</strong><span>Architectures données</span></li>
+                  <li><strong>Anglais (niveau B1)</strong><span>Technique &amp; oral</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 03 : PARCOURS -->
+    <section id="parcours" class="section">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-num" aria-hidden="true">03</span>
+          <div class="section-title-wrap">
+            <h2>Formation &amp; Étapes clés</h2>
+            <p>Progression académique de l’électronique matérielle vers l’intelligence artificielle et l’ingénierie logicielle.</p>
+          </div>
+        </div>
+
+        <div class="timeline-ledger fade-in">
+          <article class="tl-row">
+            <div class="tl-date">Rentrée 2026</div>
+            <div class="tl-content">
+              <h3>Admis en Licence 2 — Intelligence Artificielle &amp; Big Data</h3>
+              <p>ESGIS, Lomé, Togo. Consolidation en machine learning, statistiques, bases de données avancées et architectures Big Data.</p>
+            </div>
+          </article>
+
+          <article class="tl-row">
+            <div class="tl-date">2025 — 2026</div>
+            <div class="tl-content">
+              <h3>Licence 1 — Intelligence Artificielle &amp; Big Data (validée)</h3>
+              <p>ESGIS, Lomé, Togo. Algorithmique, programmation Python, mathématiques pour l’informatique et introduction aux bases de données.</p>
+              <details class="tl-details">
+                <summary>Voir les réalisations menées en parallèle</summary>
+                <p>Développement et mise en production de Liora (Next.js + Gemini AI), publication open source de Folder Compressor (Python/Tkinter) et conception de 5 sites vitrines déployés sur Netlify.</p>
+              </details>
+            </div>
+          </article>
+
+          <article class="tl-row">
+            <div class="tl-date">2025</div>
+            <div class="tl-content">
+              <h3>Baccalauréat série F2 (Électronique)</h3>
+              <p>Lomé, Togo. Électronique analogique et numérique, capteurs et réalisation de systèmes automatisés sur Arduino.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 04 : CONTACT & CV -->
+    <section id="contact" class="contact-section">
+      <div class="container">
+        <div class="shoji-acrylic contact-frame fade-in">
+          <div class="contact-lead">
+            <span class="dossier-kicker contact-kicker">04 · Prise de contact</span>
+            <h2>Construisons ou collaborons sur un projet.</h2>
+            <p>Je suis à la recherche d’un stage en développement web, Python ou IA (à Lomé ou à distance). Vous pouvez me joindre directement par email, téléphone ou consulter mon CV.</p>
+
+            <div class="email-bar">
+              <a href="mailto:pharelffoligan@gmail.com" id="emailLink">pharelffoligan@gmail.com</a>
+              <button type="button" class="btn btn-primary btn-copy" id="copyBtn">
+                Copier l’email
+              </button>
+            </div>
+            <div class="copy-feedback" id="copyFeedback" role="status" aria-live="polite"></div>
+          </div>
+
+          <div class="contact-channels" aria-label="Canaux directs et documents">
+            <a href="CV_Folly_Pharel_FOLIGAN.pdf" download class="channel-link">
+              <span>Télécharger le CV</span>
+              <small>Format PDF ↓</small>
+            </a>
+            <a href="https://github.com/PharelFOLIGAN" target="_blank" rel="noopener noreferrer" class="channel-link">
+              <span>GitHub</span>
+              <small>@PharelFOLIGAN ↗</small>
+            </a>
+            <a href="https://www.linkedin.com/in/folly-pharel-foligan-azedoho" target="_blank" rel="noopener noreferrer" class="channel-link">
+              <span>LinkedIn</span>
+              <small>Profil complet ↗</small>
+            </a>
+            <a href="https://wa.me/22898080246" target="_blank" rel="noopener noreferrer" class="channel-link">
+              <span>WhatsApp</span>
+              <small>+228 98 08 02 46 ↗</small>
+            </a>
+            <a href="tel:+22898080246" class="channel-link">
+              <span>Téléphone direct</span>
+              <small>+228 98 08 02 46</small>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER COMPLET -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
       <div>
-        <p>Je suis <strong>Folly Pharel FOLIGAN AZEDOHO</strong>, étudiant en licence Intelligence Artificielle et Big Data à l'ESGIS (École Supérieure de Gestion, d'Informatique et des Sciences) à Lomé, Togo. J'ai validé ma première année et je suis admis en deuxième année pour la rentrée 2026. Titulaire d'un baccalauréat série F2 (électronique) obtenu en 2025, j'ai également une base concrète en électronique et en prototypage matériel.</p>
-        <p>En parallèle de mes études, j'apprends en construisant : une application web avec Next.js et PostgreSQL intégrant une API d'intelligence artificielle, un outil Python avec interface graphique, des sites vitrines mis en ligne sur Netlify, ainsi que des systèmes automatisés sur Arduino. Chaque projet m'a fait découvrir de nouvelles technologies, que je continue d'approfondir.</p>
-        <p>Curieux et rigoureux, je continue à me former en autonomie à travers des projets personnels et des réalisations concrètes.</p>
+        <strong>&copy; <span id="year">2026</span> Folly Pharel FOLIGAN AZEDOHO</strong>
+        <span>Étudiant en L2 IA &amp; Big Data — ESGIS Lomé, Togo.</span>
       </div>
-      <div class="facts">
-        <div class="fact"><strong>L1 validée</strong><span>Admis en L2 IA & Big Data (ESGIS)</span></div>
-        <div class="fact"><strong>8+</strong><span>Projets réalisés (Web, IA, Python &amp; Arduino)</span></div>
-        <div class="fact"><strong>Lomé, Togo</strong><span>Disponible pour un stage</span></div>
+      <div>
+        <strong>Disponibilité</strong>
+        <span>Ouvert aux offres de stage (présentiel Lomé ou à distance) · Français &amp; Anglais (B1).</span>
       </div>
-    </div>
-  </div>
-</section>
-
-<section id="competences">
-  <div class="container reveal">
-    <span class="tag">Compétences</span>
-    <h2>Ce que je sais faire</h2>
-    <p class="sub">Ce que je pratique régulièrement, ce que j'ai découvert à travers mes projets, et ce que j'apprends en ce moment.</p>
-    <div class="skills-grid">
-      <div class="card">
-        <h3>Maîtrisé</h3>
-        <div class="chips"><span class="chip">Python</span><span class="chip">HTML / CSS</span><span class="chip">JavaScript</span><span class="chip">Arduino / Capteurs</span><span class="chip">Git / GitHub</span><span class="chip">Vercel / Netlify</span></div>
-      </div>
-      <div class="card">
-        <h3>Notions - Web</h3>
-        <div class="chips"><span class="chip">TypeScript</span><span class="chip">React</span><span class="chip">Next.js</span><span class="chip">Node.js</span><span class="chip">Drizzle ORM</span><span class="chip">Tkinter</span></div>
-      </div>
-      <div class="card">
-        <h3>Notions - Données & IA</h3>
-        <div class="chips"><span class="chip">PostgreSQL</span><span class="chip">SQL</span><span class="chip">API Gemini</span><span class="chip">JWT</span><span class="chip">Pandas / NumPy</span><span class="chip">C++</span></div>
-      </div>
-      <div class="card">
-        <h3>En cours d'apprentissage</h3>
-        <div class="chips"><span class="chip">Machine learning</span><span class="chip">Statistiques</span><span class="chip">Big Data</span><span class="chip">Anglais (B1)</span></div>
+      <div class="footer-links">
+        <a href="CV_Folly_Pharel_FOLIGAN.pdf" download>CV PDF</a>
+        <a href="https://github.com/PharelFOLIGAN" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+        <a href="https://www.linkedin.com/in/folly-pharel-foligan-azedoho" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+        <a href="#accueil">Haut de page ↑</a>
       </div>
     </div>
-  </div>
-</section>
+  </footer>
 
-<section id="projets">
-  <div class="container reveal">
-    <span class="tag">Projets</span>
-    <h2>Mes réalisations</h2>
-    <p class="sub">Quelques projets concrets sur lesquels j'ai travaillé, seul ou en équipe.</p>
-    <div class="projects-grid">
-      <article class="card project">
-        <div class="thumb">
-          <span class="thumb-label">SaaS &bull; IA</span>
-          <span class="thumb-code">liora-ai.vercel.app</span>
-        </div>
-        <h3>Liora - Plateforme SaaS avec IA</h3>
-        <p>Application web proposant un générateur de CV, un résumeur de PDF et un correcteur de texte grâce à l'API Gemini. Expérience avec Next.js, base PostgreSQL (Drizzle ORM) et authentification JWT. Mise en ligne sur Vercel.</p>
-        <div class="chips"><span class="chip">Next.js</span><span class="chip">React 19</span><span class="chip">TypeScript</span><span class="chip">PostgreSQL</span><span class="chip">Gemini AI</span></div>
-        <div class="links"><a href="https://liora-ai.vercel.app" target="_blank" rel="noopener noreferrer">Voir le site</a><span style="color:var(--dim)">Code privé</span></div>
-      </article>
+  <!-- ASSISTANT SHOJI DISCRET -->
+  <button
+    type="button"
+    class="chat-trigger"
+    id="chatToggle"
+    aria-expanded="false"
+    aria-controls="chatDrawer"
+    aria-label="Ouvrir l'assistant questions rapides">
+    <span class="chat-trigger-dot" aria-hidden="true"></span>
+    <span>Questions rapides</span>
+  </button>
 
-      <article class="card project">
-        <div class="thumb">
-          <span class="thumb-label">Grande Distribution</span>
-          <span class="thumb-code">Netlify Deploy</span>
-        </div>
-        <h3>Site vitrine - Groupe Le Champion</h3>
-        <p>Proposition commerciale de site vitrine pour une chaîne de 14 supermarchés au Togo : univers produits, promotions, magasins avec itinéraires, espace fournisseurs et contact. Maquette, responsive et hébergement Netlify.</p>
-        <div class="chips"><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">JavaScript</span><span class="chip">Netlify</span></div>
-        <div class="links"><a href="https://proposition-lechampion.netlify.app" target="_blank" rel="noopener noreferrer">Voir le site</a></div>
-      </article>
-
-      <article class="card project">
-        <div class="thumb">
-          <span class="thumb-label">Maison d'hôtes</span>
-          <span class="thumb-code">Netlify Deploy</span>
-        </div>
-        <h3>La Maison D'À Côté - Lomé</h3>
-        <p>Proposition de site vitrine pour une maison d'hôtes à Lomé : présentation des chambres et des espaces, galerie photo interactive, avis clients, FAQ et simulateur de demande de séjour.</p>
-        <div class="chips"><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">JavaScript</span><span class="chip">Netlify</span></div>
-        <div class="links"><a href="https://la-maison-da-cote.netlify.app" target="_blank" rel="noopener noreferrer">Voir le site</a></div>
-      </article>
-
-      <article class="card project">
-        <div class="thumb">
-          <span class="thumb-label">Hôtellerie</span>
-          <span class="thumb-code">Netlify Deploy</span>
-        </div>
-        <h3>Mint Hotel Togo</h3>
-        <p>Concept de site vitrine pour un hôtel situé à Djidjolé (Lomé) : mise en valeur des chambres, de la piscine extérieure et du restaurant, géolocalisation et formulaire de disponibilité connecté à WhatsApp.</p>
-        <div class="chips"><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">JavaScript</span><span class="chip">Netlify</span></div>
-        <div class="links"><a href="https://mint-hotel.netlify.app" target="_blank" rel="noopener noreferrer">Voir le site</a></div>
-      </article>
-
-      <article class="card project">
-        <div class="thumb">
-          <span class="thumb-label">Résidence</span>
-          <span class="thumb-code">Netlify Deploy</span>
-        </div>
-        <h3>Résidence Fafa - Lomé</h3>
-        <p>Maquette de présentation pour une résidence hôtelière à Totsi (Lomé) : découverte des prestations (chambres familiales, jardin &amp; terrasse, restauration), itinéraire Google Maps et préparation de réservation.</p>
-        <div class="chips"><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">JavaScript</span><span class="chip">Netlify</span></div>
-        <div class="links"><a href="https://residence-fafa.netlify.app" target="_blank" rel="noopener noreferrer">Voir le site</a></div>
-      </article>
-
-      <article class="card project">
-        <div class="thumb">
-          <span class="thumb-label">Mode &bull; Boutique</span>
-          <span class="thumb-code">Netlify Deploy</span>
-        </div>
-        <h3>Raknis Fashion Boutique</h3>
-        <p>Vitrine web pour une boutique de prêt-à-porter et d'accessoires (femme &amp; homme) à Lomé, conçue pour présenter les collections et faciliter la prise de contact directe via WhatsApp.</p>
-        <div class="chips"><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">JavaScript</span><span class="chip">Netlify</span></div>
-        <div class="links"><a href="https://rhakis.netlify.app" target="_blank" rel="noopener noreferrer">Voir le site</a></div>
-      </article>
-
-      <article class="card project">
-        <div class="thumb">
-          <span class="thumb-label">Desktop GUI</span>
-          <span class="thumb-code">Python &bull; Tkinter</span>
-        </div>
-        <h3>Folder Compressor</h3>
-        <p>Application de bureau avec interface graphique moderne (thème AMOLED) qui compresse en lot chaque sous-dossier en archive .zip, .cbz ou .7z. Filtrage de la file, extensions personnalisées, protection contre l'écrasement. Licence MIT.</p>
-        <div class="chips"><span class="chip">Python</span><span class="chip">Tkinter</span><span class="chip">zipfile</span></div>
-        <div class="links"><a href="https://github.com/arielleEi/Folder-Compressor" target="_blank" rel="noopener noreferrer">Code source</a></div>
-      </article>
-
-      <article class="card project">
-        <div class="thumb">
-          <span class="thumb-label">Embarqué &bull; IoT</span>
-          <span class="thumb-code">Arduino &bull; C/C++</span>
-        </div>
-        <h3>Systèmes automatisés sur Arduino</h3>
-        <p>Conception de prototypes électroniques intelligents : automatisation de parking, feux tricolores adaptatifs (détection de l'absence de véhicules pour fluidifier le passage au vert), éclairage automatique par capteur de présence et systèmes à capteurs infrarouges et de température.</p>
-        <div class="chips"><span class="chip">Arduino</span><span class="chip">C / C++</span><span class="chip">Capteurs IR &amp; Température</span><span class="chip">Électronique</span></div>
-        <div class="links"><span style="color:var(--dim)">Prototypes matériels</span></div>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section id="parcours">
-  <div class="container reveal">
-    <span class="tag">Parcours</span>
-    <h2>Formation et étapes clés</h2>
-    <p class="sub">Les étapes de mon parcours académique et de mes réalisations techniques.</p>
-    <div class="timeline">
-      <div class="tl-item">
-        <span class="date">RENTRÉE 2026</span>
-        <h3>Admis en Licence 2 - Intelligence Artificielle & Big Data</h3>
-        <p>ESGIS, Lomé, Togo. Programme : machine learning, bases de données avancées, statistiques, architecture Big Data.</p>
+  <section
+    class="chat-drawer"
+    id="chatDrawer"
+    role="dialog"
+    aria-label="Assistant du portfolio"
+    hidden>
+    <div class="chat-head">
+      <div>
+        <strong>Assistant du portfolio</strong>
+        <small>Réponses basées sur le parcours réel de Pharel</small>
       </div>
-      <div class="tl-item">
-        <span class="date">2025 - 2026</span>
-        <h3>Licence 1 - Intelligence Artificielle & Big Data (validée)</h3>
-        <p>ESGIS, Lomé, Togo. Algorithmique, programmation Python, mathématiques pour l'informatique, introduction aux bases de données.</p>
-      </div>
-      <div class="tl-item">
-        <span class="date">2025 - 2026</span>
-        <h3>Projets personnels déployés</h3>
-        <p>Conception et mise en production de Liora (SaaS Next.js + Gemini AI), réalisation de plusieurs sites vitrines sur Netlify (grande distribution, hôtellerie, mode) et publication d'un outil Python open source sur GitHub.</p>
-      </div>
-      <div class="tl-item">
-        <span class="date">2025</span>
-        <h3>Baccalauréat série F2 (Électronique)</h3>
-        <p>Lomé, Togo. Électronique analogique et numérique, capteurs et réalisation de systèmes automatisés sur Arduino.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="contact" class="contact">
-  <div class="container reveal">
-    <span class="tag">Contact</span>
-    <h2>Travaillons ensemble</h2>
-    <p>Je suis ouvert aux opportunités de stage, aux projets collaboratifs et aux échanges autour de la data et de l'IA. N'hésitez pas à me contacter.</p>
-    
-    <div class="contact-email-box">
-      <a href="mailto:pharelffoligan@gmail.com" id="emailLink">pharelffoligan@gmail.com</a>
-      <button type="button" class="copy-btn" id="copyBtn" onclick="copyEmail()">Copier l'email</button>
+      <button type="button" class="chat-close" id="chatClose" aria-label="Fermer l'assistant">&times;</button>
     </div>
 
-    <div class="socials">
-      <a href="https://github.com/PharelFOLIGAN" target="_blank" rel="noopener noreferrer">GitHub</a>
-      <a href="https://www.linkedin.com/in/folly-pharel-foligan-azedoho" id="linkedinLink" target="_blank" rel="noopener noreferrer" class="btn btn-ghost" style="padding:10px 20px;transform:none">LinkedIn</a>
-      <a href="tel:+22898080246">+228 98 08 02 46</a>
-      <a href="https://wa.me/22898080246" target="_blank" rel="noopener noreferrer">WhatsApp</a>
-    </div>
-  </div>
-</section>
+    <div class="chat-msgs" id="chatMsgs" aria-live="polite"></div>
+    <div class="chat-sugg" id="chatSugg"></div>
 
-<footer>
-  <div class="container">&copy; <span id="year"></span> Folly Pharel FOLIGAN - Étudiant IA & Big Data, ESGIS Lomé</div>
-</footer>
+    <form class="chat-form" id="chatForm" autocomplete="off">
+      <label for="chatInput" class="sr-only">Posez une question sur le profil de Pharel</label>
+      <input type="text" id="chatInput" placeholder="Ex : Parle-moi de Liora, son stage..." maxlength="300">
+      <button type="submit">Envoyer</button>
+    </form>
+  </section>
 
-<!-- CHATBOT -->
-<button class="chat-toggle" id="chatToggle" aria-label="Ouvrir l'assistant">
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-8 8H7l-4 3v-6a8 8 0 0 1 1-4 8 8 0 0 1 7-5h2a8 8 0 0 1 8 4z"/></svg>
-</button>
-<div class="chat-box" id="chatBox" role="dialog" aria-label="Assistant du portfolio">
-  <div class="chat-head">
-    <div><strong>Assistant du portfolio</strong><small><span class="dot"></span>Posez-moi une question sur Pharel</small></div>
-    <button class="chat-close" id="chatClose" aria-label="Fermer">&times;</button>
-  </div>
-  <div class="chat-msgs" id="chatMsgs"></div>
-  <div class="chat-sugg" id="chatSugg"></div>
-  <form class="chat-form" id="chatForm" autocomplete="off">
-    <input type="text" id="chatInput" placeholder="Écrivez votre question..." maxlength="300">
-    <button type="submit">Envoyer</button>
-  </form>
-</div>
+  <script>
+    (function () {
+      'use strict';
 
-<script>
-  document.getElementById('year').textContent = new Date().getFullYear();
+      /* 1. Année dynamique du footer */
+      const yearEl = document.getElementById('year');
+      if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-  function copyEmail() {
-    const email = "pharelffoligan@gmail.com";
-    navigator.clipboard.writeText(email).then(() => {
-      const btn = document.getElementById('copyBtn');
-      const original = btn.textContent;
-      btn.textContent = "Copié !";
-      setTimeout(() => { btn.textContent = original; }, 2000);
-    });
-  }
+      /* 2. Menu mobile accessible */
+      const navToggle = document.getElementById('navToggle');
+      const navMenu = document.getElementById('navMenu');
+      const mqMobile = window.matchMedia('(max-width: 767px)');
 
-  /* ================= CHATBOT =================
-     Modifie l'objet PROFIL ci-dessous : le bot s'en sert pour répondre.
-     Option : renseigne API_URL pour brancher une vraie IA.
-  ============================================ */
-  const PROFIL = {
-    nom: "Folly Pharel FOLIGAN AZEDOHO",
-    prenom: "Pharel",
-    ecole: "ESGIS (École Supérieure de Gestion, d'Informatique et des Sciences), Lomé, Togo",
-    niveau: "licence Intelligence Artificielle et Big Data (première année validée, admis en deuxième année pour la rentrée 2026)",
-    bac: "baccalauréat série F2 (électronique), obtenu en 2025",
-    ville: "Lomé, Togo",
-    email: "pharelffoligan@gmail.com",
-    telephone: "+228 98 08 02 46",
-    linkedin: "https://www.linkedin.com/in/folly-pharel-foligan-azedoho",
-    github: "https://github.com/PharelFOLIGAN",
-    dispo: "disponible pour un stage en développement web, Python ou IA, en présentiel à Lomé ou à distance",
-    langues: "français (courant) et anglais (niveau B1)",
-    competences: {
-      maitrise: ["Python", "HTML / CSS", "JavaScript", "Arduino / systèmes embarqués", "Git / GitHub", "déploiement Vercel / Netlify"],
-      notions: ["TypeScript", "React", "Next.js", "Node.js", "Drizzle ORM", "PostgreSQL", "SQL", "API Gemini", "JWT", "Tkinter", "C++", "Pandas / NumPy"],
-      apprentissage: ["machine learning", "statistiques", "Big Data"]
-    },
-    projets: [
-      {nom:"Liora", desc:"une application web avec générateur de CV, résumeur de PDF et correcteur de texte via l'API Gemini, développée avec Next.js, PostgreSQL et JWT, mise en ligne sur Vercel (liora-ai.vercel.app)", tech:"Next.js, React 19, TypeScript, PostgreSQL, Drizzle ORM, Gemini AI", mots:["loria","liora","saas","cv","gemini","next","nextjs","react","pdf","correcteur"]},
-      {nom:"Site vitrine Groupe Le Champion", desc:"une proposition de site vitrine pour une chaîne de 14 supermarchés au Togo, avec promotions, magasins, espace fournisseurs et contact, déployée sur Netlify (proposition-lechampion.netlify.app)", tech:"HTML, CSS, JavaScript, Netlify", mots:["champion","supermarche","magasin","distribution"]},
-      {nom:"La Maison D'À Côté", desc:"une proposition de site vitrine pour une maison d'hôtes à Lomé avec galerie interactive, FAQ et simulateur de demande de séjour (la-maison-da-cote.netlify.app)", tech:"HTML, CSS, JavaScript, Netlify", mots:["maison","cote","hotes","maison d'hotes","aflao"]},
-      {nom:"Mint Hotel Togo", desc:"un concept de site vitrine pour un hôtel à Djidjolé (Lomé) présentant les chambres, la piscine, le restaurant et un formulaire de disponibilité relié à WhatsApp (mint-hotel.netlify.app)", tech:"HTML, CSS, JavaScript, Netlify", mots:["mint","hotel","djidjole","piscine"]},
-      {nom:"Résidence Fafa", desc:"une maquette de site vitrine pour une résidence hôtelière à Totsi (Lomé) avec présentation des services, itinéraire Google Maps et préparation de réservation (residence-fafa.netlify.app)", tech:"HTML, CSS, JavaScript, Netlify", mots:["fafa","residence","totsi"]},
-      {nom:"Raknis Fashion Boutique", desc:"une vitrine web pour une boutique de prêt-à-porter et d'accessoires à Lomé avec découverte des collections et contact direct via WhatsApp (rhakis.netlify.app)", tech:"HTML, CSS, JavaScript, Netlify", mots:["raknis","rhakis","fashion","boutique","mode","vetement"]},
-      {nom:"Folder Compressor", desc:"une application de bureau avec interface graphique AMOLED qui compresse en lot des sous-dossiers en archives .zip, .cbz ou .7z, publiée sous licence MIT", tech:"Python, Tkinter", mots:["folder","compress","archive","zip","tkinter","bureau","desktop"]},
-      {nom:"Systèmes automatisés sur Arduino", desc:"un ensemble de prototypes électroniques intelligents : automatisation de parking, feux tricolores adaptatifs qui détectent l'absence de véhicules pour accélérer le passage au vert, éclairage automatique par capteur de présence et montages à capteurs infrarouges et de température", tech:"Arduino, C/C++, capteurs infrarouges, présence et température, électronique", mots:["arduino","parking","feu","tricolore","capteur","infrarouge","temperature","presence","lumiere","electronique","iot","embarque"]}
-    ],
-    interets: "l'intelligence artificielle, la création d'applications web utiles et le développement d'outils open source"
-  };
-  const API_URL = "";
+      function syncNavForViewport() {
+        if (!navToggle || !navMenu) return;
+        if (mqMobile.matches) {
+          const isOpen = navToggle.getAttribute('aria-expanded') === 'true';
+          navMenu.hidden = !isOpen;
+        } else {
+          navMenu.hidden = false;
+          navToggle.setAttribute('aria-expanded', 'false');
+          navToggle.textContent = 'Menu';
+        }
+      }
 
-  const norm = s => s.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"");
-  const has = (t, arr) => arr.some(w => t.includes(norm(w)));
-  const pick = arr => arr[Math.floor(Math.random()*arr.length)];
-  const prenom = PROFIL.prenom;
+      if (navToggle && navMenu) {
+        syncNavForViewport();
+        if (mqMobile.addEventListener) {
+          mqMobile.addEventListener('change', syncNavForViewport);
+        }
 
-  function repondre(q){
-    const t = norm(q.trim());
-    if(!t) return "Je vous écoute. Posez-moi une question sur le parcours, les compétences ou les projets de "+prenom+".";
+        navToggle.addEventListener('click', () => {
+          const next = navToggle.getAttribute('aria-expanded') !== 'true';
+          navToggle.setAttribute('aria-expanded', String(next));
+          navToggle.textContent = next ? 'Fermer' : 'Menu';
+          navMenu.hidden = !next;
+        });
 
-    if(has(t,["bonjour","salut","hello","bonsoir","hey","coucou","yo"]))
-      return pick(["Bonjour et bienvenue sur le portfolio de "+prenom+". Que souhaitez-vous savoir ?","Bonjour. Je peux vous renseigner sur les compétences, les projets, la formation ou les coordonnées de "+prenom+"."]);
-    if(has(t,["merci","thanks","parfait","super","top"]))
-      return "Avec plaisir. N'hésitez pas si vous avez une autre question.";
-    if(has(t,["au revoir","bye","a plus","a bientot","ciao"]))
-      return "Au revoir et merci de votre visite. Vous pouvez contacter "+prenom+" à "+PROFIL.email+".";
+        navMenu.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => {
+            if (mqMobile.matches) {
+              navToggle.setAttribute('aria-expanded', 'false');
+              navToggle.textContent = 'Menu';
+              navMenu.hidden = true;
+            }
+          });
+        });
+      }
 
-    // Projet précis
-    for(const p of PROFIL.projets){
-      if(has(t,p.mots)) return p.nom+" : c'est "+p.desc+". Technologies utilisées : "+p.tech+". Vous trouverez les détails dans la section Projets.";
-    }
+      /* 3. Barre de progression + indicateur de section active */
+      const progressEl = document.getElementById('scrollProgress');
+      const navLinks = Array.from(document.querySelectorAll('#navMenu a[href^="#"]'));
+      const trackedSections = navLinks
+        .map(a => document.querySelector(a.getAttribute('href')))
+        .filter(Boolean);
 
-    if(has(t,["projet","realisation","realise","portfolio","travaux","construit","developpe"]))
-      return prenom+" a réalisé "+PROFIL.projets.length+" projets principaux :\n"+PROFIL.projets.map(p=>"- "+p.nom+" ("+p.tech+")").join("\n")+"\n\nDemandez-moi des détails sur l'un d'eux.";
+      function updateScrollUI() {
+        const doc = document.documentElement;
+        const maxScroll = doc.scrollHeight - window.innerHeight;
+        if (progressEl && maxScroll > 0) {
+          const pct = Math.min(100, Math.max(0, (window.scrollY / maxScroll) * 100));
+          progressEl.style.width = pct.toFixed(1) + '%';
+        }
 
-    if(has(t,["python","java","typescript","sql","c++","langage","programm","code","coder","web","site","front","back","framework","node","react","next","outil","git","github","vercel","deploi","machine learning","ia","intelligence artificielle","donnees","base de donnees","postgres","big data","competence","skill","sait faire","technolog","techno","stack","maitrise","capable","niveau"]))
-      return "Compétences de "+prenom+", en toute transparence :\n- Maîtrisé : "+PROFIL.competences.maitrise.join(", ")+"\n- Notions (découvertes via ses projets) : "+PROFIL.competences.notions.join(", ")+"\n- En cours d'apprentissage : "+PROFIL.competences.apprentissage.join(", ")+"\n\nIl apprend vite en pratiquant et cherche un stage pour consolider ces bases.";
-    if(has(t,["stage","alternance","embauch","recrut","disponib","emploi","job","travail","poste","mission","freelance"]))
-      return prenom+" est "+PROFIL.dispo+". Pour une proposition, écrivez à "+PROFIL.email+" ou appelez le "+PROFIL.telephone+".";
-    if(has(t,["ecole","esgis","etud","formation","universite","licence","diplome","bac","cursus","annee","niveau","parcours"]))
-      return prenom+" est en "+PROFIL.niveau+" à l'"+PROFIL.ecole+". Il a obtenu son "+PROFIL.bac+". Détails dans la section Parcours.";
-    if(has(t,["experience","stage precedent","entreprise","professionnel"]))
-      return prenom+" n'a pas encore d'expérience en entreprise, mais il a déjà mis plusieurs projets en ligne (Liora sur Vercel, 5 sites vitrines sur Netlify) et publié un outil Python open source sur GitHub. Il recherche justement un premier stage.";
-    if(has(t,["contact","email","mail","telephone","tel","numero","joindre","appeler","ecrire","linkedin","reseau"]))
-      return "Vous pouvez joindre "+prenom+" :\n- Email : "+PROFIL.email+"\n- Téléphone / WhatsApp : "+PROFIL.telephone+"\n- GitHub : "+PROFIL.github+"\n- LinkedIn : "+PROFIL.linkedin;
-    if(has(t,["ou habite","ville","localis","pays","togo","lome","habite","situe","vit"]))
-      return prenom+" est basé à "+PROFIL.ville+". Il est ouvert au travail à distance.";
-    if(has(t,["langue","anglais","francais","parle"]))
-      return prenom+" parle "+PROFIL.langues+".";
-    if(has(t,["interet","passion","aime","centre","hobby","loisir","motive","pourquoi"]))
-      return "Ce qui motive "+prenom+" : "+PROFIL.interets+".";
-    if(has(t,["cv","curriculum","resume","telecharger"]))
-      return "Le CV de "+prenom+" est téléchargeable via le bouton « Télécharger mon CV » en haut de la page, ou sur demande à "+PROFIL.email+".";
-    if(has(t,["qui es tu","tu es qui","t es qui","tu es quoi","c est quoi","robot","bot","humain","chatgpt"]))
-      return "Je suis l'assistant du portfolio de "+prenom+". Je réponds aux questions sur son profil, ses compétences, ses projets et ses coordonnées.";
-    if(has(t,["qui est","presente","a propos","about","c est qui","parle moi de"]))
-      return PROFIL.nom+" est étudiant en "+PROFIL.niveau+" à l'"+PROFIL.ecole+". Développeur junior autodidacte, il a déjà mis en ligne une application web avec IA intégrée, plusieurs sites vitrines et un outil Python, et recherche un stage pour progresser.";
-    if(has(t,["age","ans","naissance","vieux"]))
-      return "Cette information n'est pas publiée ici. Vous pouvez la demander directement à "+prenom+" via "+PROFIL.email+".";
+        if (trackedSections.length) {
+          const atBottom = window.innerHeight + window.scrollY >= doc.scrollHeight - 4;
+          let activeId = '';
+          if (atBottom) {
+            activeId = trackedSections[trackedSections.length - 1].id;
+          } else {
+            const offset = window.scrollY + 140;
+            for (const sec of trackedSections) {
+              if (sec.offsetTop <= offset) activeId = sec.id;
+            }
+          }
+          navLinks.forEach(a => {
+            if (a.getAttribute('href') === '#' + activeId) {
+              a.setAttribute('aria-current', 'true');
+            } else {
+              a.removeAttribute('aria-current');
+            }
+          });
+        }
+      }
 
-    return pick([
-      "Je ne suis pas sûr de comprendre. Je peux vous parler de : ses compétences, ses projets, sa formation, sa disponibilité pour un stage ou ses coordonnées.",
-      "Bonne question, mais elle sort de ce que je connais. Essayez par exemple : « Quels sont ses projets ? » ou « Comment le contacter ? ». Pour tout autre sujet, écrivez à "+PROFIL.email+"."
-    ]);
-  }
+      window.addEventListener('scroll', updateScrollUI, { passive: true });
+      updateScrollUI();
 
-  async function repondreAPI(q){
-    const r = await fetch(API_URL,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({question:q,profil:PROFIL})});
-    const d = await r.json(); return d.answer;
-  }
+      /* 4. Bouton "Tout déplier / Tout replier" pour les vitrines 04-08 */
+      const toggleAllBtn = document.getElementById('toggleAllVitrines');
+      const vitrineDetails = Array.from(document.querySelectorAll('#vitrinesLedger details'));
 
-  const box=document.getElementById('chatBox'),msgs=document.getElementById('chatMsgs'),form=document.getElementById('chatForm'),input=document.getElementById('chatInput'),sugg=document.getElementById('chatSugg');
-  const SUGG=["Quels sont ses projets ?","Parle-moi de Liora","Ses compétences ?","Comment le contacter ?"];
-  SUGG.forEach(s=>{const b=document.createElement('button');b.type='button';b.textContent=s;b.onclick=()=>envoyer(s);sugg.appendChild(b);});
+      function syncToggleAllLabel() {
+        if (!toggleAllBtn || !vitrineDetails.length) return;
+        const allOpen = vitrineDetails.every(d => d.open);
+        toggleAllBtn.setAttribute('aria-expanded', String(allOpen));
+        toggleAllBtn.textContent = allOpen ? 'Tout replier' : 'Tout déplier';
+      }
 
-  function add(txt,cls){const d=document.createElement('div');d.className='msg '+cls;d.textContent=txt;msgs.appendChild(d);msgs.scrollTop=msgs.scrollHeight;return d;}
-  async function envoyer(q){
-    if(!q.trim())return; add(q,'user'); input.value='';
-    const ty=add('','bot typing'); ty.innerHTML='<span></span><span></span><span></span>';
-    let rep;
-    try{ rep = API_URL ? await repondreAPI(q) : await new Promise(r=>setTimeout(()=>r(repondre(q)),500+Math.random()*500)); }
-    catch(e){ rep = repondre(q); }
-    ty.remove(); add(rep,'bot');
-  }
-  form.addEventListener('submit',e=>{e.preventDefault();envoyer(input.value);});
-  let opened=false;
-  function toggle(o){box.classList.toggle('open',o);if(o&&!opened){opened=true;add("Bonjour. Je suis l'assistant du portfolio de "+prenom+". Posez-moi une question sur son parcours, ses compétences ou ses projets.",'bot');}if(o)input.focus();}
-  document.getElementById('chatToggle').onclick=()=>toggle(!box.classList.contains('open'));
-  document.getElementById('chatClose').onclick=()=>toggle(false);
-  document.addEventListener('keydown',e=>{if(e.key==='Escape')toggle(false);});
+      if (toggleAllBtn && vitrineDetails.length) {
+        toggleAllBtn.addEventListener('click', () => {
+          const shouldOpen = !vitrineDetails.every(d => d.open);
+          vitrineDetails.forEach(d => { d.open = shouldOpen; });
+          syncToggleAllLabel();
+        });
+        vitrineDetails.forEach(d => d.addEventListener('toggle', syncToggleAllLabel));
+      }
 
-  /* ===== Animation d'apparition + menu mobile ===== */
-  const reveals = document.querySelectorAll('.reveal');
-  if ('IntersectionObserver' in window) {
-    const obs = new IntersectionObserver(entries => {
-      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
-    }, { threshold: 0, rootMargin: '0px 0px -10% 0px' });
-    reveals.forEach(el => obs.observe(el));
-    setTimeout(() => reveals.forEach(el => el.classList.add('visible')), 1500);
-  } else {
-    reveals.forEach(el => el.classList.add('visible'));
-  }
-  document.querySelectorAll('#menu a').forEach(a => a.addEventListener('click', () => document.getElementById('menu').classList.remove('open')));
-</script>
+      /* 5. Onglets accessibles des compétences (clic + flèches clavier) */
+      const tabButtons = Array.from(document.querySelectorAll('.tab-btn[role="tab"]'));
+      const skillGroups = Array.from(document.querySelectorAll('#skillsPanels .skill-group'));
+
+      function activateTab(btn) {
+        const filter = btn.dataset.filter;
+        tabButtons.forEach(b => {
+          const selected = b === btn;
+          b.setAttribute('aria-selected', String(selected));
+          b.tabIndex = selected ? 0 : -1;
+        });
+
+        skillGroups.forEach(group => {
+          group.hidden = filter !== 'tous' && group.dataset.group !== filter;
+        });
+      }
+
+      tabButtons.forEach((btn, idx) => {
+        btn.addEventListener('click', () => activateTab(btn));
+        btn.addEventListener('keydown', e => {
+          if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+            e.preventDefault();
+            const dir = e.key === 'ArrowRight' ? 1 : -1;
+            const next = tabButtons[(idx + dir + tabButtons.length) % tabButtons.length];
+            activateTab(next);
+            next.focus();
+          }
+        });
+      });
+
+      /* 6. Copie d'email avec feedback humain (heuristique de Nielsen) */
+      const copyBtn = document.getElementById('copyBtn');
+      const copyFeedback = document.getElementById('copyFeedback');
+      const emailText = 'pharelffoligan@gmail.com';
+      let copyTimer = null;
+
+      if (copyBtn && copyFeedback) {
+        copyBtn.addEventListener('click', async () => {
+          clearTimeout(copyTimer);
+          try {
+            if (navigator.clipboard && window.isSecureContext) {
+              await navigator.clipboard.writeText(emailText);
+            } else {
+              const tmp = document.createElement('textarea');
+              tmp.value = emailText;
+              tmp.setAttribute('readonly', '');
+              tmp.style.position = 'absolute';
+              tmp.style.left = '-9999px';
+              document.body.appendChild(tmp);
+              tmp.select();
+              const ok = document.execCommand('copy');
+              document.body.removeChild(tmp);
+              if (!ok) throw new Error('copy_failed');
+            }
+            copyBtn.textContent = 'Email copié';
+            copyFeedback.textContent = 'Adresse pharelffoligan@gmail.com copiée dans votre presse-papier.';
+          } catch (err) {
+            copyFeedback.textContent = 'Copie automatique bloquée par le navigateur : cliquez sur le lien email à gauche.';
+          }
+          copyTimer = setTimeout(() => {
+            copyBtn.textContent = 'Copier l’email';
+          }, 2600);
+        });
+      }
+
+      /* 7. Apparition douce non bloquante au scroll */
+      const fadeEls = Array.from(document.querySelectorAll('.fade-in'));
+      const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (!prefersReduced && 'IntersectionObserver' in window && fadeEls.length) {
+        fadeEls.forEach(el => {
+          const rect = el.getBoundingClientRect();
+          if (rect.top > window.innerHeight * 0.95) {
+            el.classList.add('is-pending');
+          }
+        });
+
+        const io = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.remove('is-pending');
+              io.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.05 });
+
+        fadeEls.forEach(el => io.observe(el));
+        setTimeout(() => fadeEls.forEach(el => el.classList.remove('is-pending')), 1400);
+      }
+
+      /* 8. Assistant Q&A basé sur le profil réel */
+      const PROFIL = {
+        nom: "Folly Pharel FOLIGAN AZEDOHO",
+        prenom: "Pharel",
+        ecole: "ESGIS (École Supérieure de Gestion, d'Informatique et des Sciences), Lomé, Togo",
+        niveau: "licence Intelligence Artificielle et Big Data (L1 validée, admis en L2 pour la rentrée 2026)",
+        bac: "baccalauréat série F2 (électronique), obtenu en 2025",
+        ville: "Lomé, Togo",
+        email: "pharelffoligan@gmail.com",
+        telephone: "+228 98 08 02 46",
+        linkedin: "https://www.linkedin.com/in/folly-pharel-foligan-azedoho",
+        github: "https://github.com/PharelFOLIGAN",
+        dispo: "disponible pour un stage en développement web, Python ou IA, en présentiel à Lomé ou à distance",
+        langues: "français (courant) et anglais (niveau B1)",
+        competences: {
+          maitrise: ["Python", "HTML / CSS", "JavaScript", "Arduino / systèmes embarqués", "Git / GitHub", "Vercel / Netlify"],
+          notions: ["Next.js", "React", "TypeScript", "Node.js", "Drizzle ORM", "PostgreSQL", "SQL", "API Gemini", "JWT", "Tkinter", "C/C++", "Pandas / NumPy"],
+          apprentissage: ["Machine Learning", "Statistiques", "Big Data", "Anglais B1"]
+        },
+        projets: [
+          { nom: "Liora", desc: "une plateforme SaaS avec générateur de CV, résumeur de PDF et correcteur de texte via l'API Gemini, développée avec Next.js, PostgreSQL (Drizzle ORM) et JWT, déployée sur Vercel (liora-ai.vercel.app)", tech: "Next.js, React 19, TypeScript, PostgreSQL, Drizzle ORM, Gemini AI", mots: ["liora", "loria", "saas", "cv", "gemini", "next", "nextjs", "react", "pdf", "correcteur"] },
+          { nom: "Folder Compressor", desc: "une application de bureau Python/Tkinter avec thème AMOLED qui compresse en lot des sous-dossiers en archives .zip, .cbz ou .7z (licence MIT)", tech: "Python, Tkinter, zipfile", mots: ["folder", "compress", "archive", "zip", "tkinter", "bureau", "desktop"] },
+          { nom: "Systèmes automatisés sur Arduino", desc: "des prototypes matériels : parking automatisé, feux tricolores adaptatifs, éclairage automatique par présence et montages à capteurs infrarouges et de température", tech: "Arduino, C/C++, capteurs IR, présence & température", mots: ["arduino", "parking", "feu", "tricolore", "capteur", "infrarouge", "temperature", "presence", "electronique", "iot", "embarque"] },
+          { nom: "Groupe Le Champion", desc: "une proposition de site vitrine pour une chaîne de 14 supermarchés au Togo (proposition-lechampion.netlify.app)", tech: "HTML, CSS, JavaScript, Netlify", mots: ["champion", "supermarche", "magasin", "distribution"] },
+          { nom: "La Maison D'À Côté", desc: "une proposition de site vitrine pour une maison d'hôtes à Lomé avec galerie interactive et simulateur de séjour (la-maison-da-cote.netlify.app)", tech: "HTML, CSS, JavaScript, Netlify", mots: ["maison", "cote", "hotes"] },
+          { nom: "Mint Hotel Togo", desc: "un concept de site vitrine pour un hôtel à Djidjolé (Lomé) connecté à WhatsApp (mint-hotel.netlify.app)", tech: "HTML, CSS, JavaScript, Netlify", mots: ["mint", "hotel", "djidjole", "piscine"] },
+          { nom: "Résidence Fafa", desc: "une maquette pour une résidence hôtelière à Totsi (Lomé) (residence-fafa.netlify.app)", tech: "HTML, CSS, JavaScript, Netlify", mots: ["fafa", "residence", "totsi"] },
+          { nom: "Raknis Fashion Boutique", desc: "une vitrine web de prêt-à-porter et d'accessoires à Lomé avec contact direct WhatsApp (rhakis.netlify.app)", tech: "HTML, CSS, JavaScript, Netlify", mots: ["raknis", "rhakis", "fashion", "boutique", "mode", "vetement"] }
+        ]
+      };
+
+      const norm = s => s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+      const has = (t, arr) => arr.some(w => t.includes(norm(w)));
+
+      function repondre(q) {
+        const t = norm(q.trim());
+        if (!t) return "Posez-moi une question sur le parcours, les projets ou les coordonnées de " + PROFIL.prenom + ".";
+        if (has(t, ["bonjour", "salut", "hello", "bonsoir", "hey", "coucou"]))
+          return "Bonjour. Je peux vous renseigner sur les projets, les compétences réelles, la formation ou les disponibilités de stage de " + PROFIL.prenom + ".";
+        if (has(t, ["merci", "parfait", "super"]))
+          return "Avec plaisir. N'hésitez pas si vous souhaitez vérifier un autre point.";
+
+        for (const p of PROFIL.projets) {
+          if (has(t, p.mots)) {
+            return p.nom + " : c'est " + p.desc + ". Technologies : " + p.tech + ".";
+          }
+        }
+
+        if (has(t, ["projet", "realisation", "portfolio", "travaux"]))
+          return PROFIL.prenom + " présente 3 projets phares (Liora IA, Folder Compressor, Arduino F2) et 5 sites vitrines déployés sur Netlify. Demandez-moi des détails sur l'un d'eux.";
+
+        if (has(t, ["competence", "stack", "python", "react", "next", "sql", "arduino", "ia", "skill", "niveau"]))
+          return "Compétences de " + PROFIL.prenom + " :\n- Maîtrisé : " + PROFIL.competences.maitrise.join(', ') + "\n- Pratiqué en projet : " + PROFIL.competences.notions.join(', ') + "\n- En cours (L2) : " + PROFIL.competences.apprentissage.join(', ') + ".";
+
+        if (has(t, ["stage", "dispo", "recrut", "embauch", "alternance", "travail"]))
+          return PROFIL.prenom + " est " + PROFIL.dispo + ". Contact direct : " + PROFIL.email + " ou " + PROFIL.telephone + ".";
+
+        if (has(t, ["ecole", "esgis", "formation", "licence", "bac", "etud", "parcours"]))
+          return PROFIL.prenom + " est en " + PROFIL.niveau + " à l'" + PROFIL.ecole + ", après un " + PROFIL.bac + ".";
+
+        if (has(t, ["contact", "email", "mail", "tel", "numero", "linkedin", "github", "whatsapp"]))
+          return "Joindre " + PROFIL.prenom + " :\n- Email : " + PROFIL.email + "\n- Tél / WhatsApp : " + PROFIL.telephone + "\n- GitHub : " + PROFIL.github + "\n- LinkedIn : " + PROFIL.linkedin;
+
+        if (has(t, ["au revoir", "bye", "a plus", "a bientot", "ciao"]))
+          return "Au revoir et merci de votre visite. Vous pouvez contacter " + PROFIL.prenom + " à " + PROFIL.email + ".";
+
+        if (has(t, ["experience", "entreprise", "professionnel"]))
+          return PROFIL.prenom + " n'a pas encore d'expérience en entreprise, mais il a déjà déployé Liora sur Vercel, 5 sites vitrines sur Netlify et publié un outil Python open source sur GitHub. Il recherche justement un premier stage.";
+
+        if (has(t, ["langue", "anglais", "francais", "parle"]))
+          return PROFIL.prenom + " parle " + PROFIL.langues + ".";
+
+        if (has(t, ["ville", "localis", "pays", "togo", "lome", "habite", "situe"]))
+          return PROFIL.prenom + " est basé à " + PROFIL.ville + " et reste ouvert au travail à distance.";
+
+        if (has(t, ["qui est", "presente", "a propos", "parle moi de"]))
+          return PROFIL.nom + " est étudiant en " + PROFIL.niveau + " à l'" + PROFIL.ecole + ", titulaire d'un " + PROFIL.bac + ".";
+
+        if (has(t, ["cv", "curriculum", "telecharger"]))
+          return "Le CV PDF est téléchargeable directement depuis le bouton « Télécharger le CV (PDF) » en haut de page ou dans la section Contact.";
+
+        return "Je peux répondre sur ses 8 projets (ex. Liora, Arduino), son niveau exact par technologie, sa formation ESGIS / Bac F2 ou sa disponibilité de stage.";
+      }
+
+      const chatToggle = document.getElementById('chatToggle');
+      const chatDrawer = document.getElementById('chatDrawer');
+      const chatClose = document.getElementById('chatClose');
+      const chatMsgs = document.getElementById('chatMsgs');
+      const chatSugg = document.getElementById('chatSugg');
+      const chatForm = document.getElementById('chatForm');
+      const chatInput = document.getElementById('chatInput');
+      let initialized = false;
+
+      function appendMsg(text, who) {
+        const div = document.createElement('div');
+        div.className = 'msg ' + who;
+        div.textContent = text;
+        chatMsgs.appendChild(div);
+        chatMsgs.scrollTop = chatMsgs.scrollHeight;
+      }
+
+      function sendQuestion(q) {
+        if (!q.trim()) return;
+        appendMsg(q, 'user');
+        chatInput.value = '';
+        setTimeout(() => appendMsg(repondre(q), 'bot'), 220);
+      }
+
+      function setChatOpen(open) {
+        if (!chatDrawer || !chatToggle) return;
+        chatDrawer.hidden = !open;
+        chatToggle.setAttribute('aria-expanded', String(open));
+        if (open) {
+          if (!initialized) {
+            initialized = true;
+            appendMsg("Bonjour. Posez-moi une question sur le parcours, les projets ou le stage recherché par " + PROFIL.prenom + ".", 'bot');
+            ["Parle-moi de Liora", "Ses compétences ?", "Disponibilité stage ?", "Comment le contacter ?"].forEach(label => {
+              const b = document.createElement('button');
+              b.type = 'button';
+              b.textContent = label;
+              b.addEventListener('click', () => sendQuestion(label));
+              chatSugg.appendChild(b);
+            });
+          }
+          chatInput.focus();
+        }
+      }
+
+      if (chatToggle && chatDrawer) {
+        chatToggle.addEventListener('click', () => setChatOpen(chatDrawer.hidden));
+        if (chatClose) {
+          chatClose.addEventListener('click', () => {
+            setChatOpen(false);
+            chatToggle.focus();
+          });
+        }
+        if (chatForm) {
+          chatForm.addEventListener('submit', e => {
+            e.preventDefault();
+            sendQuestion(chatInput.value);
+          });
+        }
+      }
+
+      /* Fermeture au clavier (Esc) pour menu mobile et assistant */
+      document.addEventListener('keydown', e => {
+        if (e.key === 'Escape') {
+          if (chatDrawer && !chatDrawer.hidden) {
+            setChatOpen(false);
+            if (chatToggle) chatToggle.focus();
+          }
+          if (mqMobile.matches && navMenu && !navMenu.hidden && navToggle) {
+            navToggle.setAttribute('aria-expanded', 'false');
+            navToggle.textContent = 'Menu';
+            navMenu.hidden = true;
+            navToggle.focus();
+          }
+        }
+      });
+    })();
+  </script>
 </body>
 </html>
