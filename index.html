@@ -1423,6 +1423,55 @@
         width: 100%;
       }
     }
+
+    /* Direction artistique inspirée du portfolio de référence */
+    :root {
+      --bg: #0c0b0e; --bg-2: #151319;
+      --acrylic: rgba(25, 23, 30, .86); --acrylic-strong: #201d25;
+      --acrylic-nav: rgba(12, 11, 14, .92);
+      --text: #f3f0f4; --muted: #c0b9c4; --dim: #aaa2ae;
+      --amber: #c8afca; --amber-light: #ead9e9; --amber-deep: #a88daa;
+      --amber-soft: rgba(200, 175, 202, .12); --amber-line: rgba(200, 175, 202, .4);
+      --amber-glow: rgba(200, 175, 202, .2); --ink: #211721;
+      --border: rgba(236, 226, 237, .12); --border-hi: rgba(236, 226, 237, .2);
+      --max-w: 1320px; --radius: 12px;
+    }
+    body::before { background: radial-gradient(ellipse 520px 480px at 87% 0%, rgba(150, 126, 156, .17), transparent 68%), #0c0b0e; }
+    .site-nav { border-bottom-color: rgba(255,255,255,.06); }
+    .logo-badge { border-radius: 50%; border-color: transparent; box-shadow: none; }
+    .hero { position: relative; overflow: hidden; padding: 0; }
+    .hero::before { content: ""; position: absolute; width: clamp(270px, 36vw, 520px); aspect-ratio: 1; right: -5%; top: -48%; border-radius: 50%; background: radial-gradient(circle at 40% 70%, #49414e, #242028 58%, #141217 78%); opacity: .65; pointer-events: none; }
+    .hero-grid { position: relative; grid-template-columns: 245px minmax(0, 1fr); gap: clamp(45px, 8vw, 120px); align-items: center; min-height: min(720px, calc(100vh - var(--nav-h))); }
+    .hero-grid > div:first-child { grid-column: 2; grid-row: 1; padding: 80px 0; }
+    .profile-card { grid-column: 1; grid-row: 1; align-self: center; border: 1px solid var(--border); border-radius: 22px; background: #141316; padding: 20px; display: flex; flex-direction: column; justify-content: center; }
+    .profile-monogram { aspect-ratio: 1; border-radius: 12px; background: radial-gradient(circle at 70% 15%, #67586c, transparent 45%), linear-gradient(145deg, #38313b, #17151a); display: flex; flex-direction: column; align-items: center; justify-content: center; color: #e4d5e4; border: 1px solid rgba(255,255,255,.09); }
+    .profile-monogram span { font-family: var(--font-display); font-size: 5rem; letter-spacing: -.08em; line-height: 1; }
+    .profile-monogram small { font: .65rem var(--font-mono); letter-spacing: .2em; margin-top: 12px; }
+    .profile-copy { padding-top: 30px; }
+    .profile-eyebrow { color: var(--dim); font: .65rem var(--font-mono); letter-spacing: .12em; }
+    .profile-copy h2 { font: 700 1.35rem/1.2 var(--font-display); margin: 12px 0; }
+    .profile-copy h2 span { color: var(--amber); }
+    .profile-copy p { color: var(--dim); font-size: .86rem; }
+    .profile-socials { display: flex; gap: 18px; margin: 26px 0; font-size: .82rem; }
+    .profile-socials a { color: var(--muted); }
+    .profile-contact { display: flex; justify-content: space-between; align-items: center; background: var(--amber); color: var(--ink); border-radius: 50px; padding: 12px 16px; font-size: .8rem; font-weight: 700; }
+    .hero-badge { background: none; border: 0; padding: 0; color: var(--dim); text-transform: uppercase; font-size: .72rem; letter-spacing: .1em; }
+    .hero h1 { max-width: 850px; font-size: clamp(2.9rem, 6.3vw, 6rem); line-height: 1.04; letter-spacing: -.055em; }
+    .hero h1 span { background: none; color: var(--amber); }
+    .hero-desc { max-width: 58ch; margin-top: 26px; color: var(--muted); }
+    .hero .btn { border-radius: 50px; }
+    @media (max-width: 767px) {
+      .nav-links { background: #151319; }
+      .hero-grid { grid-template-columns: 1fr; gap: 0; min-height: 0; }
+      .hero-grid > div:first-child { grid-column: 1; grid-row: 1; padding: 80px 0 48px; }
+      .profile-card { grid-column: 1; grid-row: 2; margin-bottom: 42px; padding: 20px; display: grid; grid-template-columns: 120px 1fr; gap: 22px; align-items: start; }
+      .profile-monogram span { font-size: 3rem; }
+      .profile-copy { padding: 0; }
+      .profile-socials { margin: 14px 0; }
+      .profile-contact { max-width: 230px; }
+      .hero::before { top: -12%; right: -35%; }
+    }
+    @media (max-width: 400px) { .profile-card { grid-template-columns: 90px 1fr; gap: 16px; } .profile-monogram span { font-size: 2.3rem; } }
   </style>
 </head>
 <body>
@@ -1468,7 +1517,7 @@
             <span>ESGIS Lomé · L2 IA &amp; Big Data · Disponible stage</span>
           </div>
 
-          <h1>Folly Pharel <span>FOLIGAN</span> — Développeur Web, Python &amp; IA.</h1>
+          <h1>Bonjour, je suis <span>Pharel.</span><br>Développeur web &amp; passionné d’IA.</h1>
 
           <p class="hero-desc">
             Étudiant en <strong>Intelligence Artificielle &amp; Big Data</strong> à l’ESGIS Lomé et titulaire d’un <strong>Bac F2 (électronique)</strong>. Je conçois et déploie des applications web intégrant l’IA, des outils Python de bureau et des systèmes automatisés Arduino. À la recherche d’un stage.
@@ -1481,34 +1530,18 @@
           </div>
         </div>
 
-        <!-- Module Dev Acrylic : synthèse immédiate pour recruteur tech -->
-        <aside class="acrylic spec-panel" aria-label="Synthèse technique du profil">
-          <div class="spec-head">
-            <span class="spec-file">profil.config.json</span>
-            <span class="spec-state">STAGE · LOMÉ / REMOTE</span>
+        <aside class="profile-card" aria-label="Profil de Pharel">
+          <div class="profile-monogram" aria-hidden="true"><span>PF</span><small>DEV / IA</small></div>
+          <div class="profile-copy">
+            <span class="profile-eyebrow">DÉVELOPPEUR CRÉATIF</span>
+            <h2>Folly Pharel<br>FOLIGAN<span>.</span></h2>
+            <p>Étudiant en IA &amp; Big Data.<br>Basé à Lomé, Togo.</p>
+            <div class="profile-socials">
+              <a href="https://github.com/PharelFOLIGAN" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+              <a href="https://www.linkedin.com/in/folly-pharel-foligan-azedoho" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+            </div>
+            <a href="#contact" class="profile-contact">Travaillons ensemble <span>↗</span></a>
           </div>
-          <dl class="spec-rows">
-            <div class="spec-row">
-              <dt>formation</dt>
-              <dd>L2 IA &amp; Big Data · ESGIS Lomé</dd>
-            </div>
-            <div class="spec-row">
-              <dt>socle</dt>
-              <dd>Bac série F2 Électronique (2025)</dd>
-            </div>
-            <div class="spec-row">
-              <dt>projets</dt>
-              <dd>8+ livrés (SaaS IA, Python, Web, Arduino)</dd>
-            </div>
-            <div class="spec-row">
-              <dt>stack_core</dt>
-              <dd>Python · JS/TS · Next.js · SQL · Arduino</dd>
-            </div>
-            <div class="spec-row">
-              <dt>langues</dt>
-              <dd>Français (courant) · Anglais (B1)</dd>
-            </div>
-          </dl>
         </aside>
       </div>
     </header>
@@ -1714,7 +1747,6 @@
           <article class="acrylic skill-card reveal" data-skill-cat="maitrise">
             <h3>Maîtrisé</h3>
             <ul class="chips">
-              <li class="chip">Python</li>
               <li class="chip">HTML / CSS</li>
               <li class="chip">JavaScript</li>
               <li class="chip">Arduino / Capteurs</li>
@@ -1750,6 +1782,7 @@
           <article class="acrylic skill-card reveal" data-skill-cat="apprentissage">
             <h3>En cours d’apprentissage</h3>
             <ul class="chips">
+              <li class="chip">Python</li>
               <li class="chip">Machine learning</li>
               <li class="chip">Statistiques</li>
               <li class="chip">Big Data</li>
@@ -2087,9 +2120,9 @@
         dispo: "disponible pour un stage en développement web, Python ou IA, en présentiel à Lomé ou à distance",
         langues: "français (courant) et anglais (niveau B1)",
         competences: {
-          maitrise: ["Python", "HTML / CSS", "JavaScript", "Arduino / systèmes embarqués", "Git / GitHub", "Vercel / Netlify"],
+          maitrise: ["HTML / CSS", "JavaScript", "Arduino / systèmes embarqués", "Git / GitHub", "Vercel / Netlify"],
           notions: ["TypeScript", "React", "Next.js", "Node.js", "Drizzle ORM", "PostgreSQL", "SQL", "API Gemini", "JWT", "Tkinter", "C++", "Pandas / NumPy"],
-          apprentissage: ["machine learning", "statistiques", "Big Data"]
+          apprentissage: ["Python", "machine learning", "statistiques", "Big Data"]
         },
         projets: [
           { nom: "Liora", desc: "une application web avec générateur de CV, résumeur de PDF et correcteur de texte via l'API Gemini, développée avec Next.js, PostgreSQL et JWT, mise en ligne sur Vercel (liora-ai.vercel.app)", tech: "Next.js, React 19, TypeScript, PostgreSQL, Drizzle ORM, Gemini AI", mots: ["loria", "liora", "saas", "cv", "gemini", "next", "nextjs", "react", "pdf", "correcteur"] },
